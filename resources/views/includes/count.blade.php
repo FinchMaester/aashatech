@@ -1,71 +1,65 @@
+<section class="u-align-center u-clearfix u-custom-color-3 u-section-3" id="carousel_979f">
+    <div class="u-list u-list-1">
+        <div class="u-repeater u-repeater-1"></div>
+    </div>
+    <div class="u-list u-list-2">
+        <div class="u-repeater u-repeater-2">
+            <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-1"
+                data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="X">
+                <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+                    <span class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/4714730.png"
+                            alt=""></span>
 
-        <section class="u-align-center u-clearfix u-custom-color-3 u-section-3" id="carousel_979f">
-            <div class="u-list u-list-1">
-                <div class="u-repeater u-repeater-1"></div>
+                    <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Happy Team</h6>
+
+                    <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">
+                        {{ $teamcount }}+<span style="font-weight: 700;"></span>
+                    </p>
+                </div>
             </div>
-            <div class="u-list u-list-2">
-                <div class="u-repeater u-repeater-2">
-                    <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-1"
-                        data-animation-name="customAnimationIn" data-animation-duration="1000"
-                        data-animation-direction="X">
-                        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
-                            <span
-                                class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/4714730.png"
-                                    alt=""></span>
+            <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-1"
+                data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="X">
+                <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span
+                        class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/2683274.png"
+                            alt=""></span>
 
-                            <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Happy Team</h6>
-                            
-                            <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">{{ $teamcount }}+<span
-                                    style="font-weight: 700;"></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-1"
-                        data-animation-name="customAnimationIn" data-animation-duration="1000"
-                        data-animation-direction="X">
-                        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span
-                                class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/2683274.png"
-                                    alt=""></span>
+                    <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Projects Done</h6>
 
-                            <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Projects Done</h6>
-                            
-                            <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">{{ $totalProject }}<span
-                                    style="font-weight: 700;"></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-1"
-                        data-animation-name="customAnimationIn" data-animation-duration="1000"
-                        data-animation-direction="X">
-                        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span
-                                class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/6009864.png"
-                                    alt=""></span>
+                    <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">
+                        {{ $totalProject }}<span style="font-weight: 700;"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-1"
+                data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="X">
+                <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span
+                        class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/6009864.png"
+                            alt=""></span>
 
-                            <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Happy Clients</h6>
-                            
-                            <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">{{ $totalCount }}+<span
-                                    style="font-weight: 700;"></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-1"
-                        data-animation-name="customAnimationIn" data-animation-duration="1000"
-                        data-animation-direction="X">
-                        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span
-                                class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/7569006.png"
-                                    alt=""></span>
+                    <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Happy Clients</h6>
 
-                            <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Year running</h6>
-                            
-                            <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">{{ $yearsPassed }}<span
-                                    style="font-weight: 700;"></span>
-                            </p>
-                        </div>
-                    </div>
+                    <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">
+                        {{ $totalCount }}+<span style="font-weight: 700;"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-1"
+                data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="X">
+                <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span
+                        class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/7569006.png"
+                            alt=""></span>
+
+                    <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Year running</h6>
+
+                    <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">
+                        {{ $yearsPassed }}<span style="font-weight: 700;"></span>
+                    </p>
+                </div>
+            </div>
 
 
 
-                    {{-- <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-2"
+            {{-- <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-2"
                         data-animation-name="customAnimationIn" data-animation-duration="1000"
                         data-animation-direction="X">
                         <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span
@@ -103,27 +97,25 @@
                             </p>
                         </div>
                     </div> --}}
-                </div>
-            </div>
-            <img class="u-expanded-width u-image u-image-1" src="images/computer.jpg"
-                data-image-width="1280" data-image-height="853">
-               
-            <div class="u-container-style u-group u-radius-30 u-shape-round u-white u-group-1">
-                <div class="u-container-layout u-container-layout-5"></div>
-            </div>
-            <div class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-3">
-                <div class="u-repeater u-repeater-3">
+        </div>
+    </div>
+    <img class="u-expanded-width u-image u-image-1" src="images/computer.jpg" data-image-width="1280"
+        data-image-height="853">
 
-                    @foreach ($services as $service)
-                        <div class="u-align-left u-container-style u-custom-color-1 u-list-item u-opacity u-opacity-55 u-repeater-item u-shape-rectangle u-list-item-5"
-                            data-animation-name="customAnimationIn" data-animation-duration="1000"
-                            data-animation-direction="">
-                            <div class="u-container-layout u-similar-container u-container-layout-6">
-                                <div class="u-align-left u-container-style u-custom-color-2 u-group u-radius-50 u-shape-round u-group-2"
-                                    data-animation-name="fadeIn" data-animation-duration="1000"
-                                    data-animation-direction="Left">
-                                    <div class="u-container-layout u-container-layout-7">
-                                        {{-- <div class="u-custom-item u-shape u-shape-svg u-text-white u-shape-1">
+    <div class="u-container-style u-group u-radius-30 u-shape-round u-white u-group-1">
+        <div class="u-container-layout u-container-layout-5"></div>
+    </div>
+    <div class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-3">
+        <div class="u-repeater u-repeater-3">
+
+            @foreach ($services as $service)
+                <div class="u-align-left u-container-style u-custom-color-1 u-list-item u-opacity u-opacity-55 u-repeater-item u-shape-rectangle u-list-item-5"
+                    data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="">
+                    <div class="u-container-layout u-similar-container u-container-layout-6">
+                        <div class="u-align-left u-container-style u-custom-color-2 u-group u-radius-50 u-shape-round u-group-2"
+                            data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Left">
+                            <div class="u-container-layout u-container-layout-7">
+                                {{-- <div class="u-custom-item u-shape u-shape-svg u-text-white u-shape-1">
                                             <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160"
                                                 style="">
                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-64b5">
@@ -138,23 +130,24 @@
                                                 </path>
                                             </svg>
                                         </div> --}}
-                                        <img src="{{ asset('uploads/service/' . $service->icon) }}" alt="serviceicon" height="100%" width="100%" />
-                                    </div>
-                                </div>
-                                <h5 class="u-text u-text-body-alt-color u-text-9" data-animation-name="fadeIn"
-                                    data-animation-duration="1000" data-animation-direction="Right">{{ $service->title }}
-                                </h5>
-                                <p class="u-text u-text-grey-30 u-text-10">
-                                    {{ Str::substr($service->description, 0, 200) }}...</p>
-                                <a href="{{ route('Servicesingle', $service->slug) }}"
-                                    class="u-active-none u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-hover-none u-none u-text-active-custom-color-2 u-text-body-alt-color u-text-hover-custom-color-2 u-btn-1">learn
-                                    more</a>
+                                <img src="{{ asset($service->icon) }}" alt="serviceicon" height="100%"
+                                    width="100%" />
                             </div>
                         </div>
-                    @endforeach
-
-
-
+                        <h5 class="u-text u-text-body-alt-color u-text-9" data-animation-name="fadeIn"
+                            data-animation-duration="1000" data-animation-direction="Right">{{ $service->title }}
+                        </h5>
+                        <p class="u-text u-text-grey-30 u-text-10">
+                            {{ Str::substr($service->description, 0, 200) }}...</p>
+                        <a href="{{ route('Servicesingle', $service->slug) }}"
+                            class="u-active-none u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-hover-none u-none u-text-active-custom-color-2 u-text-body-alt-color u-text-hover-custom-color-2 u-btn-1">learn
+                            more</a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            @endforeach
+
+
+
+        </div>
+    </div>
+</section>

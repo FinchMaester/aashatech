@@ -15,7 +15,8 @@
                     <div class="col-md-9 col-lg-9">
                         {{-- <h3 class="page_title post_tit">{{ $service->title }}</h3> --}}
 
-                        <img class="single_img" src="{{ asset('uploads/post/' . $post->image ?? '') }}">
+                        <img src="{{ asset($post->image) }}" style="width: 150px; height: 150px;"
+                                alt="Post Image">
                         
                 
 

@@ -55,7 +55,7 @@
         @foreach ($services as $service )
         <a href="{{ route('Servicesingle', $service->slug) }}">
         <div class="service_div">
-            <img src="{{ asset('uploads/service/' . $service->icon) }}" alt="serviceicon" />
+            <img src="{{ asset($service->icon) }}" alt="serviceicon" />
 
           <h4>{{ $service->title }}</h4>
           <p>

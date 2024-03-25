@@ -17,7 +17,7 @@
                     <div class="u-container-layout u-similar-container u-container-layout-1">
                         <a class="u-post-header-link text-decoration-none" href="{{ route('Post', $post->slug) }}">
                             <!--blog_post_image-->
-                            <img src="{{ asset('uploads/post/' . $post->image) }}" alt=""
+                            <img src="{{ asset($post->image) }}" alt=""
                                 class="u-blog-control u-image u-image-default u-image-1">
                             <!--/blog_post_image-->
                         

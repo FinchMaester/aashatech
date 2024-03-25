@@ -3,7 +3,6 @@
 
 
 @section('content')
-
     @include('includes/page_header')
 
 
@@ -11,7 +10,7 @@
     @include('includes/service')
 
 
- 
+
     {{-- <main class="main mb-3">
         <div class="container">
         

@@ -9,7 +9,7 @@
 
                 <div class="u-effect-fade u-gallery-item u-gallery-item-1">
                     <div class="u-back-slide" data-image-width="225" data-image-height="97"><img
-                            class="u-back-image" src="{{ asset('uploads/client/' . $client->image) }}">
+                            class="u-back-image" src="{{ asset($client->image) }}">
                     </div>
                     <div class="u-over-slide u-shading u-over-slide-1">
                         <h3 class="u-gallery-heading"></h3>

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\ImageHandling;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Intervention\Image\Facades\Image;
 
 class ServiceController extends Controller
 {
@@ -40,39 +43,34 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $validate= $request->validate([
+        $validate = $request->validate([
             'title' => 'required|string',
-            'description'=>'required|string',
-        
+            'description' => 'required|string',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
             'icon' => 'required|image|mimes:png,gif,svg|max:300',
-   
             'content' => 'required|string',
         ]);
-      
 
+        try {
+            // Compress and convert to WebP format
+            $compressedImage = ImageHandling::compressAndConvertToWebP($request,'service');
+            $compressedIcon = ImageHandling::compressAndConvertToWebP($request, 'service');
 
-        $imagePath = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('uploads/service'), $imagePath );
+            $service = new Service;
+            $service->title = $request->title;
+            $service->slug = SlugService::createSlug(Service::class, 'slug', $request->title);
+            $service->description = $request->description;
+            $service->image = $compressedImage;
+            $service->icon = $compressedIcon;
+            $service->content = $request->content;
 
-        $iconPath = time() . '-' . $request->icon->extension();
-        $request->icon->move(public_path('uploads/service'), $iconPath );
-     
-
-        $service = new Service;
-        $service->title = $request->title;
-        $service->slug = SlugService::createSlug(Service::class,'slug', $request->title);
-
-        $service->description = $request->description;
-        $service->image = $imagePath;
-        $service->icon = $iconPath;
-        $service->content = $request->content;
-
-        if ($service->save()) {
-           
-            return redirect('admin/services/index')->with(['successMessage' => 'Success!! Services created']);
-        } else {
-            return redirect()->back()->with(['errorMessage' => 'Error!! Services not created']);
+            if ($service->save()) {
+                return redirect('admin/services/index')->with('successMessage', 'Success!! Service created');
+            } else {
+                return redirect()->back()->with('errorMessage', 'Error!! Service not created');
+            }
+        } catch (\Exception $e) {
+            return redirect()->back()->with('errorMessage', 'Error!! Something went wrong');
         }
     }
 
@@ -100,6 +98,48 @@ class ServiceController extends Controller
         return view('admin.services.update', ['service' => $service, 'page_title' =>'Update Services']);
     
     }
+    public function update(Request $request, Service $service)
+{
+    $validate = $request->validate([
+        'title' => 'required|string',
+        'description' => 'required|string',
+        'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:1536',
+        'icon' => 'required|image|mimes:png,gif,svg|max:300',
+        'content' => 'required',
+    ]);
+
+    // Find the service
+    $service = Service::find($request->id);
+
+    // Handle image upload
+    if ($request->hasFile('image')) {
+        $imagePath = time() . '-' . Str::slug($request->title) . '.webp'; // Save as WebP
+        $compressedImage = Image::make($request->file('image'))->encode('webp', 75); // Convert to WebP
+        $compressedImage->save(public_path('uploads/service/' . $imagePath)); // Save the image
+        Storage::delete('uploads/service/' . $service->image); // Delete the old image
+        $service->image = $imagePath; // Update the image path
+    }
+
+    // Handle icon upload
+    if ($request->hasFile('icon')) {
+        $iconPath = time() . '-' . Str::slug($request->title) . '.' . $request->icon->extension();
+        $request->icon->move(public_path('uploads/service'), $iconPath);
+        Storage::delete('uploads/service/' . $service->icon);
+        $service->icon = $iconPath;
+    }
+
+    // Update other fields
+    $service->title = $request->title;
+    $service->description = $request->description;
+    $service->content = $request->content;
+
+    // Save the changes to the database
+    if ($service->save()) {
+        return redirect('admin/services/index')->with('successMessage', 'Success!! Service updated');
+    } else {
+        return redirect()->back()->with('errorMessage', 'Error!! Service not updated');
+    }
+}
 
     /**
      * Update the specified resource in storage.
@@ -108,62 +148,7 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $service)
-    {
-        $validate= $request->validate([
-            'title' => 'required|string',
-            'description' => 'required|string',
-        
-            'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:1536',
-            'icon' => 'required|image|mimes:png,gif,svg|max:300',
-
-            'content' => 'required',
-        ]);
-
-
-        $service = Service::find($request->id);
-        // if ($request->hasFile('image')) {
-        //     $imagePath = $request->file('image')->storeAs('images/project', Carbon::now() . substr(str_replace(['.', '?', '/'], '-', $request->title), 0, 50) . '.' . $request->file('image')->getClientOriginalExtension(), 'public');
-        //     Storage::delete('public/' . $project->image);
-        //     $project->image = $imagePath;
-        // }
-       
-   
-
-        if ($request->hasFile('image')) {
-            $imagePath = time() . '.' . $request->title . '.' .$request->image->extension();
-            $request->image->move(public_path('uploads/service'), $imagePath );
-                         Storage::delete('uploads/service' . $service->image);
-            $service->image = $imagePath;
-        }else{
-            unset($request['image']);
-        }
-
-        if ($request->hasFile('icon')) {
-            $iconPath = time() . '-' . $request->title . '.' .$request->image->extension();
-            $request->icon->move(public_path('uploads/service'), $iconPath );
-                         Storage::delete('uploads/service' . $service->icon);
-            $service->image = $iconPath;
-        }else{
-            unset($request['image']);
-        }
-
-
-        $service->title = $request->title;
-        $service->description = $request->description;
-        $service->slug = SlugService::createSlug(Service::class,'slug', $request->title);
-
-        // $project->type = $request->type;
-        $service->content = $request->content;
-
-        if ($service->save()) {
-           
-            return redirect('admin/services/index')->with(['successMessage' => 'Success!! Service Updated']);
-        } else {
-            return redirect()->back()->with(['errorMessage' => 'Error!! Service not Updated']);
-        }
-     
-    }
+    
 
     /**
      * Remove the specified resource from storage.

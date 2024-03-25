@@ -53,8 +53,13 @@
                     <td width="5%">{{ $loop->iteration }}</td>
                     <td>{{ $backimage->title ?? '' }}</td>
 
-                    <td> <img id="preview" src="{{ url('uploads/backimage/' . $backimage->image) }}"
-                            style="width: 150px; height: 150px">
+                    <td>
+                        @if ($backimage->image)
+                            <img src="{{ asset($backimage->image) }}" style="width: 150px; height: 150px;"
+                                alt="Back Image">
+                        @else
+                            <span>No Image</span>
+                        @endif
                     </td>
                     <td>
                         <a href="edit/{{ $backimage->id }}">

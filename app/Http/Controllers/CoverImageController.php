@@ -18,14 +18,11 @@ class CoverImageController extends Controller
     }
 
     public function index()
-    {
-        try {
-            $coverimages = CoverImage::paginate(10);
-            return view('admin.coverimage.index', ['coverimages' => $coverimages, 'page_title' => 'Cover Image']);
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
-        }
-    }
+{
+    $coverimages = CoverImage::all(); // Fetch cover images data from the database
+    return view('admin.coverimage.index', ['coverimages' => $coverimages, 'page_title' => 'Cover Images']);
+}
+
 
     public function create()
     {

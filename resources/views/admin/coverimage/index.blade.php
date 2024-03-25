@@ -47,15 +47,14 @@
                     <td>
                         @if ($coverimage->image)
                             <!-- Use asset() helper function to generate correct URL for image -->
-                            <img src="{{ asset($coverimage->image) }}" style="width: 100px;height:100px" />
+                            <img src="{{ asset($coverimage->image) }}" style="width: 150px; height: 150px;"
+                                    alt="Cover Image">
                         @else
                             No Image
                         @endif
                     </td>
-
                     <td>
                         <a href="{{ url('admin/coverimage/edit/' . $coverimage->id) }}">
-
                             <button type="button" class="btn btn-block btn-warning btn-sm"><i
                                     class="fas fa-edit"></i>Edit</button>
                         </a>

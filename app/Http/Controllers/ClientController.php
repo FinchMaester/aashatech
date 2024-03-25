@@ -37,6 +37,7 @@ class ClientController extends Controller
 
             // Store the image using the storeImage function from ImageController
             $path = $imageController->storeImage($request, 'client');
+            // $webpPath = $this->convertToWebp($path);
 
             $client = new Client;
             $client->title = $request->title;

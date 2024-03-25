@@ -146,17 +146,15 @@ if ($sitesetting && is_numeric($sitesetting->year)) {
     }
 
     public function postByCategory($id)
-    {
-        $category = Category::where('id', $category_id)->first();
-        if ($category) {
-            $post = Post::where('category_id', $category->id)->get();
-            return view('index');
-        } else {
-            return redirect('/');
-        }
+{
+    $category = Category::where('id', $id)->first();
+    if ($category) {
         $posts = $category->posts;
-        return $posts;
+        return view('index', ['posts' => $posts]); // Pass the retrieved posts to the view
+    } else {
+        return redirect('/');
     }
+}
 
     public function categoryByPost($id)
     {

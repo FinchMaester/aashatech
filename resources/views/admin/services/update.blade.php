@@ -39,7 +39,7 @@
                     <input style="width:auto;" type="text" name="title" class="form-control" id="title"
                         placeholder="Title" value="{{ $service->title }}">
                 </div>
-              
+
 
                 <div>
                     <label for="description">Description</label><span style="color:red; font-size:large">
@@ -49,26 +49,28 @@
                       </textarea>
                 </div>
 
-               
+
+                <!-- Image Preview for Image -->
                 <div class="form-group">
-
-
                     <label for="image">Image</label><span style="color:red; font-size:large"> *</span>
                     <input type="file" name="image" class="form-control" id="image" onchange="previewImage(event)"
                         placeholder="Image" required>
-                    <img id="preview1" src="{{ url('uploads/service/' . $service->image) }}"
+                    <img id="imagePreview" src="{{ url('uploads/service/' . $service->image) }}"
                         style="max-width: 300px; max-height:300px" />
                 </div>
 
-
+                <!-- Image Preview for Icon -->
                 <div class="form-group">
                     <label for="icon">Icon</label><span style="color:red; font-size:large"> *</span>
-                    <input type="file" name="icon" class="form-control" id="icon" onchange="previewImage(event)"
-                        placeholder="image" required>
+                    <input type="file" name="icon" class="form-control" id="icon" onchange="previewIcon(event)"
+                        placeholder="icon" required>
+                    <img id="iconPreview" src="{{ url('uploads/service/' . $service->icon) }}"
+                        style="max-width: 500px; max-height:500px" />
                 </div>
-                <img id="preview1" src="{{ url('uploads/service/' . $service->icon) }}" style="max-width: 500px; max-height:500px" />
+                <img id="preview1" src="{{ url('uploads/service/' . $service->icon) }}"
+                    style="max-width: 500px; max-height:500px" />
 
-               
+
 
 
                 <div class="form-group">

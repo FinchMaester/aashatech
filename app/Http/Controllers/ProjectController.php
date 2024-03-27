@@ -170,16 +170,21 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        $project = Project::find($id);
+{
+    $project = Project::find($id);
 
-        if ($project->delete()) {
-    
-            Storage::delete('uploads/project/'.$project->image);
-            return redirect('admin.projects.index')->with(['successMessage' => 'Success !! project Deleted']);
-        } else {
-            return redirect()->back()->with(['errorMessage' => 'Error project not Deleted']);
+    if ($project) {
+        // Delete the image file from storage
+        if (Storage::exists('uploads/project/' . $project->image)) {
+            Storage::delete('uploads/project/' . $project->image);
         }
-    
+
+        // Delete the project record from the database
+        $project->delete();
+
+        return redirect()->route('Projects.index')->with('successMessage', 'Project deleted successfully.');
+    } else {
+        return redirect()->back()->with('errorMessage', 'Project not found.');
     }
+}
 }

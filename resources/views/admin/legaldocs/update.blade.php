@@ -30,18 +30,15 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <form id="quickForm" method="POST" action="{{ route('Legaldocs.update') }}" enctype="multipart/form-data">
+            <form id="quickForm" method="POST" action="{{ route('Legaldocs.update', ['id' => $legaldoc->id]) }}"
+                enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="id" value="{{ $legaldoc->id }}">
-                {{-- <input type="hidden" name="id" value="{{ $about->id }}"> --}}
+                @method('PUT')
                 <div class="form-group">
                     <label for="title">Title</label><span style="color:red; font-size:large"> *</span>
                     <input style="width:auto;" type="text" name="title" class="form-control" id="title"
                         placeholder="Title" value="{{ $legaldoc->title }}">
                 </div>
-               
-
-              
                 <div class="form-group">
                     <label for="image">Image</label><span style="color:red; font-size:large"> *</span>
                     <input type="file" name="image" class="form-control" id="image" onchange="previewImage(event)"
@@ -49,20 +46,18 @@
                     <img id="preview1" src="{{ url('uploads/legaldoc/' . $legaldoc->image) }}"
                         style="max-width: 300px; max-height:300px" />
                 </div>
-
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Update</button>
-        </div>
-        </form>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
 
 
 
-        <!-- /.row -->
-        <!-- Main row -->
 
-        <!-- /.row (main row) -->
+            <!-- /.row -->
+            <!-- Main row -->
+
+            <!-- /.row (main row) -->
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
@@ -85,5 +80,3 @@
 
 
 @stop
-
-

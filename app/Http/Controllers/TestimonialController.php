@@ -77,7 +77,7 @@ class TestimonialController extends Controller
 
         // Check if a new image is uploaded
         if ($request->hasFile('image')) {
-            // Store the image using the storeImage method from ImageController
+            // Store the new image using the storeImage method from ImageController
             $path = $this->imageController->storeImage($request, 'testimonials');
             // Update the image field with the new filename
             $testimonial->image = $path;
@@ -88,12 +88,15 @@ class TestimonialController extends Controller
             }
         }
 
+        // Update other fields
         $testimonial->title = $request->title;
         $testimonial->slug = SlugService::createSlug(Testimonial::class, 'slug', $request->title);
 
         // Check if content is provided
         if ($request->has('content')) {
             $testimonial->content = $request->content;
+        } else {
+            $testimonial->content = null; // Reset content if not provided
         }
 
         if ($testimonial->save()) {
@@ -105,6 +108,7 @@ class TestimonialController extends Controller
         return redirect()->back()->with('error', 'Error !! Something went wrong: ' . $e->getMessage());
     }
 }
+
 
 
     public function destroy($id)

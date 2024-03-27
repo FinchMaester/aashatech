@@ -46,7 +46,7 @@ class MessageController extends Controller
             'title' => 'required|string',
         
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
-            'description' => 'required',
+            'description' => 'required|string|max:200'
         
         ]);
 

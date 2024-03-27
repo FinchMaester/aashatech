@@ -204,12 +204,14 @@ Route::get('admin/photogallery/create', [App\Http\Controllers\PhotoGalleryContro
 Route::post('admin/photogallery/store', [App\Http\Controllers\PhotoGalleryController::class, 'store'])->name('Photogallery.store');
 
 Route::get('admin/photogallery/edit/{id}', [App\Http\Controllers\PhotoGalleryController::class, 'edit'])->name('Photogallery.edit');
-Route::post('admin/photogallery/update', [App\Http\Controllers\PhotoGalleryController::class, 'update'])->name('Photogallery.update');
+Route::post('admin/photogallery/update/{id}', [App\Http\Controllers\PhotoGalleryController::class, 'update'])->name('Photogallery.update'); // Updated route with parameter {id}
+
 Route::get('admin/photogallery/delete/{id}', [App\Http\Controllers\PhotoGalleryController::class, 'destroy'])->name('Photogallery.destroy');
 
 
 
-// For Gallery Image
+
+// For Gallery Videos
 
 Route::get('admin/videos', [App\Http\Controllers\VideoController::class, 'index'])->name('Video.index');
 Route::get('admin/videos/index', [App\Http\Controllers\VideoController::class, 'index'])->name('Video.index');
@@ -234,9 +236,13 @@ Route::post('admin/legaldocs/store', [App\Http\Controllers\LegaldocsController::
 Route::get('admin/legaldocs/edit/{id}', [App\Http\Controllers\LegaldocsController::class, 'edit'])->name('Legaldocs.edit');
 Route::post('admin/legaldocs/update', [App\Http\Controllers\LegaldocsController::class, 'update'])->name('Legaldocs.update');
 Route::get('admin/legaldocs/delete/{id}', [App\Http\Controllers\LegaldocsController::class, 'destroy'])->name('Legaldocs.destroy');
+Route::post('admin/legaldocs/update/{id}', [App\Http\Controllers\LegaldocsController::class, 'update'])->name('Legaldocs.update');
+Route::delete('admin/legaldocs/{id}', [App\Http\Controllers\LegaldocsController::class, 'destroy'])->name('Legaldocs.destroy');
+Route::put('admin/legaldocs/{id}', [App\Http\Controllers\LegaldocsController::class, 'update'])->name('Legaldocs.update');
 
 
-// For Legal Documents
+
+// For Client
 
 Route::get('admin/client', [App\Http\Controllers\ClientController::class, 'index'])->name('Client.index');
 Route::get('admin/client/index', [App\Http\Controllers\ClientController::class, 'index'])->name('Client.index');
@@ -259,6 +265,8 @@ Route::post('admin/projects/store', [App\Http\Controllers\ProjectController::cla
 Route::get('admin/projects/edit/{id}', [App\Http\Controllers\ProjectController::class, 'edit'])->name('Projects.edit');
 Route::post('admin/projects/update', [App\Http\Controllers\ProjectController::class, 'update'])->name('Projects.update');
 Route::get('admin/projects/delete/{id}', [App\Http\Controllers\ProjectController::class, 'destroy'])->name('Projects.destroy');
+
+
 
 
 // For Services
@@ -284,6 +292,8 @@ Route::post('admin/testimonials/store', [App\Http\Controllers\TestimonialControl
 Route::get('admin/testimonials/edit/{id}', [App\Http\Controllers\TestimonialController::class, 'edit'])->name('Testimonials.edit');
 Route::post('admin/testimonials/update', [App\Http\Controllers\TestimonialController::class, 'update'])->name('Testimonials.update');
 Route::get('admin/testimonials/delete/{id}', [App\Http\Controllers\TestimonialController::class, 'destroy'])->name('Testimonials.destroy');
+Route::post('admin/testimonials/update/{testimonial}', [App\Http\Controllers\TestimonialController::class, 'update'])->name('Testimonials.update');
+
 
 
 

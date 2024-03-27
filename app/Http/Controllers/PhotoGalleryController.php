@@ -56,24 +56,25 @@ class PhotoGalleryController extends Controller
             'img' => 'required|array',
             'img.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048' // maximum file size of 2 MB
         ]);
-
+    
         $gallery = PhotoGallery::findOrFail($id);
-
+    
         $images = $request->file('img');
         $path = 'uploads/gallery/';
         $convertedImages = ImageConverter::convertImages($images, $path);
-
+    
         $gallery->title = $request->title;
         $gallery->img_desc = $request->img_desc;
-
+    
         if ($convertedImages) {
             $gallery->img = $convertedImages;
         }
-
+    
         $gallery->save();
-
+    
         return redirect()->route('Photogallery.index')->with(['successMessage' => 'Success!! Gallery Updated']);
     }
+    
 
     public function destroy($id)
     {

@@ -5,7 +5,8 @@
     <div class="row mb-2">
         <div class="col-sm-6">
             <h1 class="m-0">{{ $page_title }}</h1>
-            <a href="{{ url('admin/services/create') }}"><button class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>Add Services</button></a>
+            <a href="{{ url('admin/services/create') }}"><button class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>Add
+                    Services</button></a>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -32,18 +33,23 @@
                     <td>{{ $service->title ?? '' }}</td>
                     <td>
                         @if ($service->image)
-                            <img src="{{ asset($service->image) }}" style="width: 150px; height: 150px;" alt="Service Image">
+                            <img src="{{ asset($service->image) }}" style="width: 150px; height: 150px;"
+                                alt="Service Image">
                         @else
                             <span>No Image</span>
                         @endif
                     </td>
                     <td>
                         <a href="edit/{{ $service->id }}">
-                            <button type="button" class="btn btn-block btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
+                            <button type="button" class="btn btn-block btn-warning btn-sm"><i class="fas fa-edit"></i>
+                                Edit</button>
                         </a>
-                        <a href="{{ url('admin/service/delete/' . $service->id) }}">
-                            <button type="button" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#modal-default" style="width:auto;" onclick="replaceLinkFunction">Delete</button>
+                        <a href="{{ url('admin/services/delete/' . $service->id) }}">
+                            <button type="button" class="btn btn-block btn-danger btn-sm" data-toggle="modal"
+                                data-target="#modal-default" style="width:auto;"
+                                onclick="replaceLinkFunction">Delete</button>
                         </a>
+
                     </td>
                 </tr>
             @endforeach

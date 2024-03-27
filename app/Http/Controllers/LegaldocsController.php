@@ -79,7 +79,8 @@ class LegaldocsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id, ImageController $imageController)
-    {
+{
+    try {
         $this->validate($request, [
             'title' => 'required|string',
             'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
@@ -94,11 +95,6 @@ class LegaldocsController extends Controller
         if ($request->hasFile('image')) {
             // Store the image using the storeImage function from ImageController
             $imagePath = $imageController->storeImage($request, 'legal_documents');
-
-            // Delete the previous image
-            // Storage::delete('uploads/legal_documents/' . $legaldoc->image);
-
-            // Update the image field with the new filename
             $legaldoc->image = $imagePath;
         }
 
@@ -106,31 +102,28 @@ class LegaldocsController extends Controller
         $legaldoc->slug = SlugService::createSlug(Legaldocs::class, 'slug', $request->title);
 
         if ($legaldoc->save()) {
-            return redirect('admin/legaldocs/index')->with(['successMessage' => 'Success !! Legal Documents Updated']);
+            return redirect()->route('Legaldocs.index')->with(['successMessage' => 'Success !! Legal Documents Updated']);
         } else {
             return redirect()->back()->with(['errorMessage' => 'Error !! Legal Documents not updated']);
         }
+    } catch (\Exception $e) {
+        return redirect()->back()->with(['errorMessage' => 'Error !! Something went wrong']);
+    }
+}
+
+public function destroy($id)
+{
+    $legaldoc = Legaldocs::find($id);
+
+    if (!$legaldoc) {
+        return redirect()->back()->with(['errorMessage' => 'Error !! Legal Documents not found']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $legaldoc = Legaldocs::find($id);
+    // Delete the image file
+    // Storage::delete('uploads/legal_documents/' . $legaldoc->image);
 
-        if (!$legaldoc) {
-            return redirect()->back()->with(['errorMessage' => 'Error !! Legal Documents not found']);
-        }
+    $legaldoc->delete();
 
-        // Delete the image file
-        // Storage::delete('uploads/legal_documents/' . $legaldoc->image);
-
-        $legaldoc->delete();
-
-        return redirect('admin/legaldocs/index')->with(['successMessage' => 'Success !! Legal Documents Deleted']);
-    }
+    return redirect()->route('Legaldocs.index')->with(['successMessage' => 'Success !! Legal Documents Deleted']);
+}
 }

@@ -30,7 +30,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <form id="quickForm" method="POST" action="{{ route('Testimonials.update') }}" enctype="multipart/form-data">
+            <form id="quickForm" method="POST" action="{{ route('Testimonials.update', ['testimonial' => $testimonial->id]) }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="id" value="{{ $testimonial->id }}">
                 {{-- <input type="hidden" name="id" value="{{ $about->id }}"> --}}

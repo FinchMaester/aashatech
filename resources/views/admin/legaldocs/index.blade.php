@@ -44,7 +44,7 @@
                             <button type="button" class="btn btn-block btn-warning btn-sm"><i
                                     class="fas fa-edit"></i>Edit</button>
                         </a>
-                        <a href="{{ url('admin/legaldoc/delete/' . $legaldoc->id) }}">
+                        <a href="{{ url('admin/legaldocs/delete/' . $legaldoc->id) }}">
                             <button type="button" class="btn btn-block btn-danger btn-sm" data-toggle="modal"
                                 data-target="#modal-default" style="width:auto;"
                                 onclick="replaceLinkFunction">Delete</button>

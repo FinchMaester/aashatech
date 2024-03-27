@@ -60,31 +60,38 @@ class BackImageController extends Controller
     }
 
     public function update(Request $request, BackImage $backimage)
-    {
-        try {
-            $this->validate($request, [
-                'title' => 'nullable|string',
-                'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
-            ]);
+{
+    try {
+        $this->validate($request, [
+            'title' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
+        ]);
 
-            if ($request->hasFile('image')) {
-                // Store the image using the storeImage function from ImageController
-                $path = $this->imageController->storeImage($request, 'background_image');
-                $backimage->image = $path;
-            }
+        // Retrieve the existing back image
+        $backimage = BackImage::findOrFail($request->id);
 
-            $backimage->title = $request->title ?? '';
-            $backimage->slug = SlugService::createSlug(BackImage::class, 'slug', $request->title);
+        // Update the title if provided
+        $backimage->title = $request->filled('title') ? $request->title : $backimage->title;
 
-            if ($backimage->save()) {
-                return redirect('admin/backimage/index')->with('success', 'Success !! Background Image Updated');
-            } else {
-                return redirect()->back()->with('error', 'Error !! Background Image not updated');
-            }
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Error !! Something went wrong');
+        if ($request->hasFile('image')) {
+            // Store the image using the storeImage function from ImageController
+            $path = $this->imageController->storeImage($request, 'background_image');
+
+            // Update the image path
+            $backimage->image = $path;
         }
+
+        // Save the changes
+        if ($backimage->save()) {
+            return redirect('admin/backimage/index')->with('success', 'Success !! Background Image Updated');
+        } else {
+            return redirect()->back()->with('error', 'Error !! Background Image not updated');
+        }
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Error !! Something went wrong');
     }
+}
+
 
     public function destroy($id)
     {

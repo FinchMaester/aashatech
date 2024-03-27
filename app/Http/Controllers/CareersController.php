@@ -22,7 +22,7 @@ class CareersController extends Controller
         try {
             $validatedData = $request->validate([
                 'title' => 'required',
-                'description' => 'required',
+                'description' => 'required|string|max:200',
                 'deadline' => 'required|date',
             ]);
 

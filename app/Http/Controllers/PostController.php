@@ -66,40 +66,45 @@ class PostController extends Controller
     }
 
     public function update(Request $request, Post $post)
-    {
-        try {
-            $this->validate($request, [
-                'title' => 'required|string',
-                'description' => 'required|string',
-                'file' => 'nullable|file|max:10000',
-                'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:1536',
-                'categories' => 'required',
-                'content' => 'required',
-            ]);
+{
+    try {
+        $this->validate($request, [
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'file' => 'nullable|file|max:10000',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
+            'categories' => 'required',
+            'content' => 'required',
+        ]);
 
-            // Compress and convert to WebP format if image is provided
-            if ($request->hasFile('image')) {
-                $compressedImagePath = ImageHandling::compressAndConvertToWebP($request, 'image', 15, 'uploads/post');
-                $post->image = $compressedImagePath;
-            }
+        // Retrieve the existing post
+        $post = Post::findOrFail($request->id);
 
-            // Update other fields
-            $post->title = $request->title;
-            $post->description = $request->description;
-            $post->file = $request->file ? $request->file->getClientOriginalName() : '';
-            $post->slug = SlugService::createSlug(Post::class,'slug', $request->title);
-            $post->content = $request->content;
-
-            if ($post->save()) {
-                $post->getCategories()->sync($request->categories);
-                return redirect()->route('Post.index')->with(['successMessage' => 'Success!! Post updated']);
-            } else {
-                return redirect()->back()->with(['errorMessage' => 'Error!! Post not updated']);
-            }
-        } catch (\Exception $e) {
-            return redirect()->back()->with(['errorMessage' => 'Error!! Something went wrong']);
+        // Compress and convert to WebP format if image is provided
+        if ($request->hasFile('image')) {
+            $compressedImagePath = ImageHandling::compressAndConvertToWebP($request, 'image', 15, 'uploads/post');
+            $post->image = $compressedImagePath;
         }
+
+        // Update other fields
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->file = $request->file ? $request->file->getClientOriginalName() : $post->file;
+        $post->slug = SlugService::createSlug(Post::class,'slug', $request->title);
+        $post->content = $request->content;
+
+        // Save the changes
+        if ($post->save()) {
+            $post->getCategories()->sync($request->categories);
+            return redirect()->route('Post.index')->with(['successMessage' => 'Success!! Post updated']);
+        } else {
+            return redirect()->back()->with(['errorMessage' => 'Error!! Post not updated']);
+        }
+    } catch (\Exception $e) {
+        return redirect()->back()->with(['errorMessage' => 'Error!! Something went wrong']);
     }
+}
+
 
     public function destroy($id)
     {

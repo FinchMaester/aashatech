@@ -132,12 +132,13 @@
                         </div>
                     </div>
                 </div>
+                
 
 
 
 
-
-                @include('includes/homeback')
+{{-- 
+                @include('includes/homeback') --}}
             {{-- </div>
         </section>
         <!-- Form for uploading images -->
@@ -187,7 +188,7 @@
 
 
         @include('includes/count')
-        @include('includes/teams')
+        {{-- @include('includes/teams') --}}
         @include('includes/productone')
         @include('includes/project')
         @include('includes/testimonials')

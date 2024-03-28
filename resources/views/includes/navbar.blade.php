@@ -114,26 +114,11 @@
                     </li>
                     {{-- End for careers --}}
                     <li class="u-nav-item">
-                        <a class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
-                            style="padding: 10px 31px 10px 24px;" href="#">Blogs</a>
-                        <div class="u-nav-popup">
-                            <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3">
-
-                                @foreach ($categories as $category)
-                                    <li class="u-nav-item">
-                                        <a href="{{ route('Category', $category->slug) }}"
-                                            class="u-button-style u-nav-link u-white">
-                                            {{ $category->title }}
-                                        </a>
-                                    </li>
-                                @endforeach
-
-                            </ul>
-                        </div>
+                    <a class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
+                        style="padding: 10px 31px 10px 24px;" href="{{ route('blogs') }}" style="padding: 10px 24px;">Blogs</a>
                     </li>
 
-
-                    <li class="u-nav-item">
+                        <li class="u-nav-item">
                         <a class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
                             href="{{ url('contactpage') }}" style="padding: 10px 24px;">Contact</a>
                     </li>
@@ -142,7 +127,7 @@
             </div>
 
 
-            <div class="u-custom-menu u-nav-container-collapse">
+            {{-- <div class="u-custom-menu u-nav-container-collapse">
                 <div
                     class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
                     <div class="u-inner-container-layout u-sidenav-overflow">
@@ -164,63 +149,45 @@
                                 <a class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
                                     href="{{ route('Allprojects') }}" style="padding: 10px 24px;">Projects</a>
                             </li>
-
-
-
-                            <li class="u-nav-item"><a
+                             <li class="u-nav-item"><a
                                     class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
                                     href="#" style="padding: 10px 24px;">Gallery</a>
                                 <div class="u-nav-popup">
                                     <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
                                         <li class="u-nav-item">
                                             <a href="{{ route('Gallery') }}"
-                                                class="u-button-style u-nav-link u-white">Image Gallery</a>
+                                                class="u-button-style u-nav-link u-white">Image
+                                                Gallery</a>
                                         </li>
                                         <li class="u-nav-item">
                                             <a href="{{ route('Video') }}"
-                                                class="u-button-style u-nav-link u-white">Video Gallery</a>
+                                                class="u-button-style u-nav-link u-white">Video
+                                                Gallery</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li class="u-nav-item"><a
-                                    class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
-                                    href="#" style="padding: 10px 24px;">Blogs</a>
-                                <div class="u-nav-popup">
-                                    <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
-
-
-                                        @foreach ($categories as $category)
-                                            <li class="u-nav-item">
-                                                <a href="{{ route('Category', $category->slug) }}"
-                                                    class="u-button-style u-nav-link u-white">
-                                                    {{ $category->title }}
-                                                </a>
-                                            </li>
-                                        @endforeach
 
 
 
-                                    </ul>
-                                </div>
-                            </li>
+
 
 
                             <li class="u-nav-item">
                                 <a class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
                                     href="{{ url('contactpage') }}" style="padding: 10px 24px;">Contacts</a>
-                            </li>
+                            </li> --}}
 
 
 
-
+{{-- 
                         </ul>
                     </div>
                 </div>
                 <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
             </div>
         </nav>
-    </div>
+    </div> --}}
     <style class="u-sticky-style" data-style-id="5894">
         .u-sticky-fixed.u-sticky-5894,
         .u-body.u-sticky-fixed .u-sticky-5894 {

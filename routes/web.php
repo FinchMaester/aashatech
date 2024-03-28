@@ -319,7 +319,7 @@ Route::post('admin/favicon/store', [FaviconController::class, 'store'])->name('F
 
 
 
-// For Galery Page
+// For Single Controller
 Route::get('gallery', [App\Http\Controllers\SingleController::class, 'render_gallery'])->name('Gallery');
 Route::get('video', [App\Http\Controllers\SingleController::class, 'render_video'])->name('Video');
 Route::get('contactpage', [App\Http\Controllers\SingleController::class, 'render_contact'])->name('Contact');
@@ -330,19 +330,20 @@ Route::get('testimonials', [App\Http\Controllers\SingleController::class, 'rende
 Route::get('team', [App\Http\Controllers\SingleController::class, 'render_team'])->name('Team');
 Route::get('message', [App\Http\Controllers\SingleController::class, 'render_message'])->name('Message');
 Route::get('legaldocs', [App\Http\Controllers\SingleController::class, 'render_legaldocs'])->name('Legaldocs');
-Route::get('single/{slug}', [App\Http\Controllers\SingleController::class, 'render_cat'])->name('Category');
+// Route::get('single/{slug}', [App\Http\Controllers\SingleController::class, 'render_cat'])->name('Category');
 Route::get('postview/{slug}', [App\Http\Controllers\SingleController::class, 'render_post'])->name('Post');
 Route::get('products/{slug}', [App\Http\Controllers\SingleController::class, 'render_welcome'])->name('Welcome');
 Route::get('project/{slug}', [App\Http\Controllers\SingleController::class, 'render_project'])->name('Project');
 Route::get('servicesingle/{slug}', [App\Http\Controllers\SingleController::class, 'render_servicesingle'])->name('Servicesingle');
 Route::get('singlemessage/{id}', [App\Http\Controllers\SingleController::class, 'render_singlemessage'])->name('Singlemessage');
-
-
+Route::get('blog/', [App\Http\Controllers\SingleController::class, 'render_blog'])->name('blogs');
 Route::post('/contactpage', [ContactController::class, 'store'])->name('Contact.store');
-Route::get('admin/contact/index', [App\Http\Controllers\ContactController::class, 'index'])->name('Contact.index');
-
-Route::post('/subscribers', [App\Http\Controllers\SubscriberController::class, 'store'])->name('Subscriber.store');
+Route::get('admin/contact/index', [App\Http\Controllers\ContactController::class, 'index'])->name('Contact.index');Route::post('/subscribers', [App\Http\Controllers\SubscriberController::class, 'store'])->name('Subscriber.store');
 Route::get('admin/subscriber/index', [App\Http\Controllers\SubscriberController::class, 'index'])->name('Subscriber.index');
+Route::post('postview/{slug}', [App\Http\Controllers\SingleController::class, 'render_post'])->name('Post');
+// Route::get('post/{slug}', [App\Http\Controllers\PostController::class, 'show'])->name('Post');
+
+
 
 
 //Client-side-->Careers
@@ -384,3 +385,16 @@ Route::post('admin/favicon/store', [FaviconController::class, 'store'])->name('F
 
 Route::post('/compress-image', [ImageController::class, 'compressAndConvertToWebP']);
 Route::post('/upload-image', 'ImageController@uploadImage')->name('image.upload');
+
+
+// Route::get('blogs', function () {
+//     // Redirect to the Category route with a default parameter value
+//     return redirect()->route('Category', ['slug' => 'default']);
+// })->name('Blogs');
+
+
+// Route::get('/blogs', function () {
+//     // Directly return the view containing the blog content
+//     return view('includes.blogs');
+// })->name('Blogs');
+// Route::get('/blogs', [App\Http\Controllers\SingleController::class, 'render_blog'])->name('Blogs');

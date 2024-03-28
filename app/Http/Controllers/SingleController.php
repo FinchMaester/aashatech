@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mvc;
+use App\Models\Blog;
 
 use App\Models\Post;
 use App\Models\Team;
@@ -169,9 +170,7 @@ class SingleController extends Controller
     {
         $category = Category::where('slug', $slug)->first();
         $sitesetting = Sitesetting::first();
-        $posts = Post::whereHas('getCategories', function ($q) use ($slug) {
-            $q->where('slug', $slug);
-        })->latest()->paginate(10);
+     
         $services = Service::latest()->get()->take(3);
         $categories = Category::latest()->get()->take(10);
         $about = About::first();
@@ -190,6 +189,8 @@ class SingleController extends Controller
 
     public function render_post($slug)
     {
+        
+
         $post = Post::where('slug', $slug)->first();
         $mvcs = Mvc::latest()->get()->take(3);
         $sitesetting = Sitesetting::first();
@@ -346,4 +347,16 @@ class SingleController extends Controller
 
         return view('apply_form', compact('sitesetting', 'job', 'categories', 'services'));
     }
+
+
+    public function render_blog(Request $request)
+{
+    $sitesetting = Sitesetting::first(); // Fetching site settings
+    $posts = Post::with('getCategories')->latest()->paginate(10); // Fetching paginated posts with their categories
+    $categories = Category::latest()->get()->take(10); // Fetching latest categories
+    $about = About::first(); // Fetching about information
+    $page_title = 'Blog'; // Setting the page title
+    return view('blog', compact('sitesetting', 'posts', 'categories', 'about', 'page_title'));
+}
+    
 }

@@ -27,5 +27,11 @@ class Post extends Model
         ];
     }
 
+    public function showBlogs()
+{
+    $posts = Post::all(); // Retrieve all blog posts
+    return view('includes.blogs', compact('posts'));
+}
+
     
 }

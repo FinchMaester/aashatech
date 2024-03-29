@@ -139,7 +139,8 @@ class SingleController extends Controller
         $page_title = 'Image Gallery';
         $about = About::first();
         $services = Service::latest()->get()->take(3);
-        return view('gallery', compact('sitesetting', 'page_title', 'images', 'categories', 'about', 'services'));
+        $clients = Client::all();
+        return view('gallery', compact('sitesetting', 'page_title', 'images', 'categories', 'about', 'services','clients'));
     }
     public function render_video(Request $request)
     {
@@ -358,5 +359,16 @@ class SingleController extends Controller
     $page_title = 'Blog'; // Setting the page title
     return view('blog', compact('sitesetting', 'posts', 'categories', 'about', 'page_title'));
 }
+
+
+public function render_client_list()
+{
+     
+    $sitesetting = Sitesetting::first();
+    $clients = Client::latest()->get()->take(10);
+    $page_title = 'Client';
+    return view('client', compact('clients','sitesetting','page_title'));
+}
+
     
 }

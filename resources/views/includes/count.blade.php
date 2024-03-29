@@ -10,7 +10,8 @@
                     <span class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/4714730.png"
                             alt=""></span>
 
-                    <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Happy Team</h6>
+                    <a href="{{ route('About') }}" class="u-custom-item u-text u-text-custom-color-1 u-text-1">Happy
+                        Team</a>
 
                     <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">
                         {{ $teamcount }}+<span style="font-weight: 700;"></span>
@@ -23,7 +24,8 @@
                         class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/2683274.png"
                             alt=""></span>
 
-                    <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Projects Done</h6>
+                    <a href="{{ route('Allprojects') }}"
+                        class="u-custom-item u-text u-text-custom-color-1 u-text-1">Projects Done</a>
 
                     <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">
                         {{ $totalProject }}<span style="font-weight: 700;"></span>
@@ -36,11 +38,13 @@
                         class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/6009864.png"
                             alt=""></span>
 
-                    <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Happy Clients</h6>
+                    <a href="{{ route('clientList') }}">
+                        <h6 class="u-custom-item u-text u-text-custom-color-1 u-text-1">Happy Clients</h6>
+                        <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">
+                            {{ $totalCount }}+<span style="font-weight: 700;"></span>
+                        </p>
+                    </a>
 
-                    <p class="u-align-center u-custom-item u-text u-text-custom-color-2 u-text-2">
-                        {{ $totalCount }}+<span style="font-weight: 700;"></span>
-                    </p>
                 </div>
             </div>
             <div class="u-container-style u-list-item u-preserve-proportions u-radius-15 u-repeater-item u-shape-round u-white u-list-item-1"

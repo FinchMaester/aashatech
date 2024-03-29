@@ -4,39 +4,38 @@
     <div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         <h2 class="u-text u-text-body-alt-color u-text-default u-text-1">Get To Know Us Better</h2>
         <div id="carousel-5989" data-interval="5000" data-u-ride="carousel" class="u-carousel u-slider u-slider-1">
-            <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
-                <li data-u-target="#carousel-5989" class="u-active u-grey-30 u-shape-circle" data-u-slide-to="0"
-                    style="height: 10px; width: 10px;"></li>
-                <li data-u-target="#carousel-5989" class="u-grey-30 u-shape-circle" data-u-slide-to="1"
-                    style="height: 10px; width: 10px;"></li>
-            </ol>
             <div class="u-carousel-inner" role="listbox">
                 <div class="u-active u-carousel-item u-container-style u-slide u-white u-carousel-item-1">
                     <div class="u-container-layout u-valign-top u-container-layout-1">
                         <img class="testimonial_image" src="{{ asset('images/logopu.png') }}" alt="testimonial_image">
-                        <p class="u-align-center u-large-text u-text u-text-variant u-text-2">
-                            "The software has been very helpful in managing scholarship applications and keeping track
-                            of them.
-                            It is user-friendly and we find it really easy to use and the functionality is great. It has
-                            helped us to be more efficient and
-                            organized in our recruitment of the scholarship granted students."
-
-                        </p>
-                        <h4 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-3">
-                            Roshan Pandey
-                        </h4>
+                        <div class="testimonial-content-container">
+                            <p class="u-align-center u-large-text u-text u-text-variant u-text-2">
+                                "The software has been very helpful in managing scholarship applications and keeping
+                                track
+                                of them.
+                                It is user-friendly and we find it really easy to use and the functionality is great. It
+                                has
+                                helped us to be more efficient and
+                                organized in our recruitment of the scholarship granted students."
+                            </p>
+                            <h4 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-3">
+                                Roshan Pandey
+                            </h4>
+                        </div>
                     </div>
                 </div>
 
                 @foreach ($testimonials as $testimonial)
                     <div class="u-carousel-item u-container-style u-slide u-white u-carousel-item-2">
                         <div class="u-container-layout u-valign-middle u-container-layout-2">
-                            <img class="testimonial_image"
-                                src="{{ asset('uploads/testimonial/' . $testimonial->image) }}" alt="testimonial_image">
-                            <p class="u-align-center u-large-text u-text u-text-variant u-text-2">
-                                {!! htmlspecialchars(strip_tags($testimonial->content)) !!}</p>
-                            <h4 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-3 mb-2">
-                                {{ $testimonial->title }}</h4>
+                            <img class="testimonial_image" src="{{ asset($testimonial->image) }}"
+                                alt="testimonial_image">
+                            <div class="testimonial-content-container">
+                                <p class="u-align-center u-large-text u-text u-text-variant u-text-2">
+                                    {!! htmlspecialchars(strip_tags($testimonial->content)) !!}</p>
+                                <h4 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-3 mb-2">
+                                    {{ $testimonial->title }}</h4>
+                            </div>
                         </div>
                     </div>
                 @endforeach
@@ -64,7 +63,7 @@
                     <svg viewBox="0 0 477.175 477.175">
                         <path
                             d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
-                    c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,```4c4c-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z">
+                    c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z">
                         </path>
                     </svg>
                 </span>
@@ -80,20 +79,22 @@
         </div>
     </div>
 </section>
+
 <style>
-    .u-carousel-item {
+    .testimonial-content-container {
+        max-height: 200px;
+        /* Adjust this value as needed */
         overflow-y: auto;
         /* Add vertical scroll if content exceeds the height */
     }
 </style>
 
 <script>
-    // JavaScript to set the height of carousel items dynamically based on content
     document.addEventListener("DOMContentLoaded", function() {
-        var carouselItems = document.querySelectorAll(".u-carousel-item");
-        carouselItems.forEach(function(item) {
-            var contentHeight = item.querySelector(".u-container-layout").offsetHeight;
-            item.style.height = contentHeight + "px";
+        // Set a fixed height for testimonial content container
+        var testimonialContentContainers = document.querySelectorAll(".testimonial-content-container");
+        testimonialContentContainers.forEach(function(container) {
+            container.style.height = "200px"; // Adjust this value as needed
         });
-    }); <
-    />
+    });
+</script>

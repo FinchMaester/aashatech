@@ -101,24 +101,25 @@
                     {{-- Start For careers --}}
                     <li class="u-nav-item"><a
                             class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
-                            href="#" style="padding: 10px 24px;">Careers</a>
-                        <div class="u-nav-popup">
+                            href="{{ route('Careers') }}" style="padding: 10px 24px;">Careers</a>
+                        {{-- <div class="u-nav-popup">
                             <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
                                 <li class="u-nav-item">
                                     <a href="{{ route('Careers') }}" class="u-button-style u-nav-link u-white">Current
                                         Opening</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
 
                     </li>
                     {{-- End for careers --}}
                     <li class="u-nav-item">
-                    <a class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
-                        style="padding: 10px 31px 10px 24px;" href="{{ route('blogs') }}" style="padding: 10px 24px;">Blogs</a>
+                        <a class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
+                            style="padding: 10px 31px 10px 24px;" href="{{ route('blogs') }}"
+                            style="padding: 10px 24px;">Blogs</a>
                     </li>
 
-                        <li class="u-nav-item">
+                    <li class="u-nav-item">
                         <a class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
                             href="{{ url('contactpage') }}" style="padding: 10px 24px;">Contact</a>
                     </li>
@@ -180,7 +181,7 @@
 
 
 
-{{-- 
+            {{-- 
                         </ul>
                     </div>
                 </div>
@@ -188,13 +189,13 @@
             </div>
         </nav>
     </div> --}}
-    <style class="u-sticky-style" data-style-id="5894">
-        .u-sticky-fixed.u-sticky-5894,
-        .u-body.u-sticky-fixed .u-sticky-5894 {
-            box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4) !important;
-            background: #fff;
-        }
-    </style>
+            <style class="u-sticky-style" data-style-id="5894">
+                .u-sticky-fixed.u-sticky-5894,
+                .u-body.u-sticky-fixed .u-sticky-5894 {
+                    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4) !important;
+                    background: #fff;
+                }
+            </style>
 </header>
 
 

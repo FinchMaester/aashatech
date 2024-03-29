@@ -133,7 +133,7 @@ Route::get('admin/about/edit/{id}', [App\Http\Controllers\AboutController::class
 Route::post('admin/about/update', [App\Http\Controllers\AboutController::class, 'update'])->name('About.update');
 Route::get('admin/about/delete/{id}', [App\Http\Controllers\AboutController::class, 'destroy'])->name('About.destroy');
 
-// FOr ABout
+// For Welcome
 
 Route::get('admin/welcome', [App\Http\Controllers\WelcomeController::class, 'index'])->name('Welcome.index');
 Route::get('admin/welcome/index', [App\Http\Controllers\WelcomeController::class, 'index'])->name('Welcome.index');
@@ -341,6 +341,8 @@ Route::post('/contactpage', [ContactController::class, 'store'])->name('Contact.
 Route::get('admin/contact/index', [App\Http\Controllers\ContactController::class, 'index'])->name('Contact.index');Route::post('/subscribers', [App\Http\Controllers\SubscriberController::class, 'store'])->name('Subscriber.store');
 Route::get('admin/subscriber/index', [App\Http\Controllers\SubscriberController::class, 'index'])->name('Subscriber.index');
 Route::post('postview/{slug}', [App\Http\Controllers\SingleController::class, 'render_post'])->name('Post');
+Route::get('client-list', [App\Http\Controllers\SingleController::class, 'render_client_list'])->name('clientList');
+
 // Route::get('post/{slug}', [App\Http\Controllers\PostController::class, 'show'])->name('Post');
 
 

@@ -81,4 +81,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/aasha.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+
+    
 </head>

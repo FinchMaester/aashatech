@@ -1,6 +1,8 @@
 <style>
-     @media screen and (min-width: 600px)  {
-        .mobile-break { display: none; }
+    @media screen and (min-width: 600px) {
+        .mobile-break {
+            display: none;
+        }
     }
 </style>
 
@@ -10,34 +12,43 @@
         <div class="row">
             <div class="col-md-3 col-6 top_nav_first">
                 <p class="top_nav_first_p">
-                <a href="{{ $sitesetting->face_link }}" target="_blank">
-                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                </a>
-                <a href="{{ $sitesetting->insta_link }}" target="_blank">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-                <a href="{{ $sitesetting->linked_link }}" target="_blank">
-                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                </a>
-            </p>
+                    <a href="{{ $sitesetting->face_link }}" target="_blank">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </a>
+                    <a href="{{ $sitesetting->insta_link }}" target="_blank">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="{{ $sitesetting->linked_link }}" target="_blank">
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    </a>
+                </p>
             </div>
+
             <div class="col-md-9 top_nav_second">
                 <p class="top_nav_p">
                     <span class="top_nav_loc">
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <a href="{{ route('Contact') }}">
                             {{ $sitesetting->office_address ?? '' }}
-                    </span> 
+                        </a>
+                    </span>
+
                     <br class="mobile-break">
 
                     <span class="top_nav_loc">
                         <i class="fa fa-phone" aria-hidden="true"></i>
+                        <a href="tel:{{ $sitesetting->office_contact ?? '' }}">
                             {{ $sitesetting->office_contact ?? '' }}
-                    </span> 
+                        </a>
+                    </span>
                     <br class="mobile-break">
                     <span class="top_nav_loc">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:{{ $sitesetting->office_mail ?? '' }}">
                             {{ $sitesetting->office_mail ?? '' }}
-                    </span> 
+                        </a>
+                    </span>
+
                     {{-- <span class="top_nav_loc">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                             {{ $sitesetting->office_mail ?? '' }}
@@ -59,6 +70,6 @@
                 Contact Us directly at  {{ $sitesetting->office_contact ?? '' }}
             </span>
         </p> --}}
-   
+
     </div>
 </section>

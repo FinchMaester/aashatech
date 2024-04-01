@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use id;
 use App\Models\Mvc;
-use App\Models\Blog;
 
+use App\Models\Blog;
 use App\Models\Post;
 use App\Models\Team;
 use App\Models\About;
@@ -314,6 +315,7 @@ class SingleController extends Controller
     public function render_career(Request $request)
     {
         $sitesetting = Sitesetting::first();
+         
         $data = Career::all();
         $categories = Category::latest()->get()->take(10);
         $services = Service::all();
@@ -369,6 +371,16 @@ public function render_client_list()
     $page_title = 'Client';
     return view('client', compact('clients','sitesetting','page_title'));
 }
+
+// public function showForm($id)
+// {
+//     $job = Career::findOrFail($id);
+//     return view('apply_form', ['job' => $job]);
+// }
+
+
+
+
 
     
 }

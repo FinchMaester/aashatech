@@ -33,7 +33,7 @@
                             <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
                                 <div class="u-container-layout u-container-layout-1">
                                     <img class="u-expanded-width-xs u-image u-image-default u-image-1"
-                                        src="{{ asset('uploads/sitesetting/' . $sitesetting->side_logo ?? '') }}"
+                                        src="{{ asset($sitesetting->side_logo) }}"
                                         alt="" data-image-width="1496" data-image-height="728">
                                     <h6 class="u-text u-text-default u-text-1">{{ $sitesetting->slogan }}</h6>
                                     <p class="u-text u-text-2">{{ $sitesetting->desc }}

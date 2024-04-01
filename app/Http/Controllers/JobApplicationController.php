@@ -9,13 +9,6 @@ use Illuminate\Contracts\Queue\Job;
 
 class JobApplicationController extends Controller
 {
-
-
-    // public function create()
-    // {
-    //     $careers = Career::all();
-    //     return view('apply_form', compact('careers'));
-    // }
     public function create($careerId)
     {
         $career = Career::find($careerId);
@@ -26,6 +19,7 @@ class JobApplicationController extends Controller
 
         return view('apply_form', compact('career'));
     }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -42,6 +36,7 @@ class JobApplicationController extends Controller
             'resume' => 'required|file|mimes:pdf,doc,docx',
             'career_id' => 'required|exists:careers,id',
         ]);
+
         try {
             $resumeFile = $request->file('resume');
             $filename = uniqid() . '.' . $resumeFile->getClientOriginalExtension();
@@ -60,11 +55,9 @@ class JobApplicationController extends Controller
                 'career_id' => $request->input('career_id'),
             ]);
 
-            $request->session()->flash('success', 'Job application submitted successfully for job.');
-            return redirect()->back();
+            return redirect()->back()->with('success', 'Job application submitted successfully for job.');
         } catch (\Exception $e) {
-            $request->session()->flash('error', 'An error occurred while submitting the job application.');
-            return redirect()->back();
+            return redirect()->back()->with('error', 'An error occurred while submitting the job application.');
         }
     }
 }

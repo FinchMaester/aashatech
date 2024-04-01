@@ -312,6 +312,21 @@
                                 @endif
                             </form>
 
+                            <!-- WhatsApp Button -->
+                            <!-- WhatsApp Button -->
+                            <!-- WhatsApp Button -->
+                            <div class="whatsapp-button">
+                                <a
+                                    href="https://api.whatsapp.com/send?phone=9779861516819&text=Hello,%20I%20have%20a%20question%20about%20your%20website.">
+                                    <img src="{{ asset('images/whatsapplog.png') }}" alt="WhatsApp Icon">
+                                </a>
+                            </div>
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -341,4 +356,40 @@
         </div>
     </div>
 </footer>
+{{-- <script>
+    function openWhatsApp() {
+        var phoneNumber = '+9779861516819'; // Your WhatsApp phone number
+        var message = encodeURIComponent("Hello, I have a question about your website."); // Your message
+        var url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + message;
+
+        // Open WhatsApp chat interface in a new window
+        window.open(url, '_blank');
+
+        // Alternatively, you can open WhatsApp chat interface within an iframe
+        // var iframe = document.createElement('iframe');
+        // iframe.src = url;
+        // iframe.style.width = '100%';
+        // iframe.style.height = '100%';
+        // document.body.appendChild(iframe);
+    }
+</script> --}}
+
+<style>
+    /* WhatsApp Button Styles */
+    .whatsapp-button {
+        position: fixed;
+        bottom: 20px;
+        /* Adjust vertical position as needed */
+        right: 20px;
+        /* Adjust horizontal position as needed */
+        z-index: 1000;
+    }
+
+    .whatsapp-button img {
+        width: 60px;
+        /* Adjust the size of the WhatsApp icon */
+        height: auto;
+    }
+</style>
+
 <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}">

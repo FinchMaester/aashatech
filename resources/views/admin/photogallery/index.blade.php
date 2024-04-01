@@ -63,23 +63,18 @@
                     </td>
 
                     <td>
-                        {{-- <a href="/admin/image/edit/{{ $image->id }}">
-          <div style="display: flex; flex-direction:row;">
-            <button type="button" class="btn btn-block btn-warning btn-sm"><i class="fas fa-edit"></i> Update </button>
-        </a> --}}
-                        {{-- <a href="{{ url('admin/image/delete/'.$image->id) }}"> --}}
-
-                        <button type="button" class="btn-danger button-size" data-bs-toggle="modal"
-                            data-bs-target="#edit{{ $image->id }}">
-                            Update
-                        </button>
-                        <button type="button" class="btn-danger button-size" data-bs-toggle="modal"
-                            data-bs-target="#delete{{ $image->id }}">
-                            Delete
-                        </button>
+                        <div style="display: flex; flex-direction:row;">
+                            <button type="button" class="btn btn-warning btn-sm button-size" data-bs-toggle="modal"
+                                data-bs-target="#edit{{ $image->id }}">
+                                Update
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm button-size" data-bs-toggle="modal"
+                                data-bs-target="#delete{{ $image->id }}">
+                                Delete
+                            </button>
                         </div>
-                        {{-- </a> --}}
                     </td>
+
                 </tr>
             @endforeach
         </tbody>

@@ -5099,4 +5099,11 @@ border-radius: 50%;
     margin-left: 0;
     margin-right: 0;
   }
+  .u-nav-container ul.u-nav li.u-nav-item:hover a.u-nav-link {
+    border: none; /* Remove the border */
+    background-color: transparent; /* Remove the background color */
+    transition: border 0.3s, background-color 0.3s; /* Add transition effect */
+}
+
+   
 }

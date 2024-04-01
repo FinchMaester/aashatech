@@ -342,6 +342,12 @@ Route::get('admin/contact/index', [App\Http\Controllers\ContactController::class
 Route::get('admin/subscriber/index', [App\Http\Controllers\SubscriberController::class, 'index'])->name('Subscriber.index');
 Route::post('postview/{slug}', [App\Http\Controllers\SingleController::class, 'render_post'])->name('Post');
 Route::get('client-list', [App\Http\Controllers\SingleController::class, 'render_client_list'])->name('clientList');
+Route::get('currentjobopenning', [SingleController::class, 'render_career'])->name('Career');
+// Route::get('apply', [SingleController::class, 'showForm'])->name('apply.form');
+// Route::get('apply_form/{id}', [SingleController::class, 'showForm'])->name('apply.form');
+
+
+
 
 // Route::get('post/{slug}', [App\Http\Controllers\PostController::class, 'show'])->name('Post');
 
@@ -349,7 +355,7 @@ Route::get('client-list', [App\Http\Controllers\SingleController::class, 'render
 
 
 //Client-side-->Careers
-Route::get('currentjobopenning', [SingleController::class, 'render_career'])->name('Careers');
+// Route::get('currentjobopenning', [SingleController::class, 'render_career'])->name('Careers');
 Route::get('jobvacancy/{id}', [SingleController::class, 'render_job'])->name('Jobs');
 Route::get('apply/{id}', [SingleController::class, 'render_applyForm'])->name('ApplyForm');
 Route::get('/job-applications/create', [JobApplicationController::class, 'create'])->name('job-applications.create');

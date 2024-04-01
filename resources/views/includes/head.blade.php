@@ -78,10 +78,30 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var galleryDropdown = document.getElementById('gallery-dropdown');
+            var gallerySubmenu = document.getElementById('gallery-submenu');
+
+            // Hide submenu initially
+            gallerySubmenu.style.display = 'none';
+
+            // Toggle submenu visibility when the gallery dropdown is clicked
+            galleryDropdown.addEventListener('click', function() {
+                if (gallerySubmenu.style.display === 'none') {
+                    gallerySubmenu.style.display = 'block';
+                } else {
+                    gallerySubmenu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
     <!-- Styles -->
     <link href="{{ asset('css/aasha.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 
-    
+
 </head>

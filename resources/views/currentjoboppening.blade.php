@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @section('content')
     @include('includes/page_header')
 
@@ -22,7 +23,7 @@
                                         <h4 class="card__head">{{ $item->title }}</h4>
                                         <p class="card__content">{{ $item->description }}</p>
                                         <h6 class="card__head">Deadline: {{ $item->deadline }}</h6>
-                                        <a href="{{ route('Jobs', ['id' => $item->id]) }}" class="about_btn btn-all">
+                                        <a href="{{ route('Career') }}" class="about_btn btn-all">
                                             Apply
                                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                                         </a>

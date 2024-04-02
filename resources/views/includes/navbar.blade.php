@@ -84,6 +84,45 @@
             </nav>
         </div>
     </header>
+    <style>
+        .u-nav-link {
+            text-decoration: none;
+            /* Remove default underline */
+            position: relative;
+            /* Create a positioning context for the pseudo-element */
+            color: #000;
+            /* Set default text color */
+        }
+
+        .u-nav-link:hover {
+            color: purple;
+            /* Change text color to purple on hover */
+        }
+
+        .u-nav-link::after {
+            content: '';
+            /* Create pseudo-element */
+            position: absolute;
+            /* Position the pseudo-element relative to the parent link */
+            left: 0;
+            /* Align the pseudo-element to the left */
+            bottom: -3px;
+            /* Position the pseudo-element just below the text */
+            width: 100%;
+            /* Make the pseudo-element span the entire width of the link */
+            height: 2px;
+            /* Set the height of the pseudo-element to create the underline */
+            background-color: transparent;
+            /* Set initial background color */
+            transition: background-color 0.3s;
+            /* Add transition effect for smoother color change */
+        }
+
+        .u-nav-link:hover::after {
+            background-color: purple;
+            /* Change background color to purple on hover */
+        }
+    </style>
 
     <!-- Your other HTML content goes here -->
 

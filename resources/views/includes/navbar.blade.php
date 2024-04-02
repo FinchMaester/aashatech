@@ -22,21 +22,21 @@
                 </div>
                 <div class="u-custom-menu u-nav-container">
                     <ul class="u-nav u-spacing-2 u-unstyled u-nav-1">
-                        <li class="u-nav-item">
-                            <a class="u-active-custom-color-1 u-button-style u-nav-link" href="{{ route('index') }}"
+                        <li class="u-nav-item {{ Request::routeIs('index') ?: '' }}">
+                            <a class="u-active-custom u-button-style u-nav-link" href="{{ route('index') }}"
                                 style="padding: 10px 24px;">Home</a>
                         </li>
-                        <li class="u-nav-item">
-                            <a class="u-active-custom-color-1 u-button-style u-nav-link" href="{{ route('About') }}"
+                        <li class="u-nav-item {{ Request::routeIs('About') ? 'active' : '' }}">
+                            <a class="u-active-custom u-button-style u-nav-link" href="{{ route('About') }}"
                                 style="padding: 10px 24px;">Introduction</a>
                         </li>
                         <!-- Other list items -->
-                        <li class="u-nav-item">
-                            <a id="services-link" class="u-active-custom-color-1 u-button-style u-nav-link"
+                        <li class="u-nav-item {{ Request::routeIs('Service') ? 'active' : '' }}">
+                            <a id="services-link" class="u-active-custom u-button-style u-nav-link"
                                 href="{{ route('Service') }}" style="padding: 10px 24px;">Services</a>
                         </li>
                         <!-- Other list items -->
-                        <li class="u-nav-item u-has-submenu">
+                        <li class="u-nav-item u-has-submenu {{ Request::routeIs('Gallery', 'Video') ? 'active' : '' }}">
                             <a id="gallery-dropdown" class="u-button-style u-nav-link" href="#"
                                 style="padding: 10px 24px; color: #YourActiveColor; background-color: transparent; border-color: transparent;">
                                 Gallery
@@ -55,28 +55,28 @@
                             </div>
                         </li>
                         <!-- Other list items -->
-                        <li class="u-nav-item">
-                            <a class="u-active-custom-color-1 u-button-style u-nav-link"
+                        <li class="u-nav-item {{ Request::routeIs('Allprojects') ? 'active' : '' }}">
+                            <a class="u-active-custom u-button-style u-nav-link"
                                 href="{{ route('Allprojects') }}" style="padding: 10px 24px;">Projects</a>
                         </li>
                         <!-- Other list items -->
-                        <li class="u-nav-item">
-                            <a class="u-active-custom-color-1 u-button-style u-nav-link" href="{{ route('Career') }}"
+                        <li class="u-nav-item {{ Request::routeIs('Career') ? 'active' : '' }}">
+                            <a class="u-active-custom u-button-style u-nav-link" href="{{ route('Career') }}"
                                 style="padding: 10px 24px;">Careers</a>
                         </li>
                         <!-- Other list items -->
-                        <li class="u-nav-item">
-                            <a class="u-active-custom-color-1 u-button-style u-nav-link" href="{{ route('blogs') }}"
+                        <li class="u-nav-item {{ Request::routeIs('blogs') ? 'active' : '' }}">
+                            <a class="u-active-custom u-button-style u-nav-link" href="{{ route('blogs') }}"
                                 style="padding: 10px 24px;">Blogs</a>
                         </li>
                         <!-- Other list items -->
-                        <li class="u-nav-item">
-                            <a class="u-active-custom-color-1 u-button-style u-nav-link"
+                        <li class="u-nav-item {{ Request::routeIs('Testimonial') ? 'active' : '' }}">
+                            <a class="u-active-custom u-button-style u-nav-link"
                                 href="{{ route('Testimonial') }}" style="padding: 10px 24px;">Testimonials</a>
                         </li>
                         <!-- Other list items -->
-                        <li class="u-nav-item">
-                            <a class="u-active-custom-color-1 u-button-style u-nav-link"
+                        <li class="u-nav-item {{ Request::routeIs('contactpage') ? 'active' : '' }}">
+                            <a class="u-active-custom u-button-style u-nav-link"
                                 href="{{ url('contactpage') }}" style="padding: 10px 24px;">Contact</a>
                         </li>
                     </ul>
@@ -84,48 +84,40 @@
             </nav>
         </div>
     </header>
-    <style>
-        .u-nav-link {
-            text-decoration: none;
-            /* Remove default underline */
-            position: relative;
-            /* Create a positioning context for the pseudo-element */
-            color: #000;
-            /* Set default text color */
-        }
-
-        .u-nav-link:hover {
-            color: purple;
-            /* Change text color to purple on hover */
-        }
-
-        .u-nav-link::after {
-            content: '';
-            /* Create pseudo-element */
-            position: absolute;
-            /* Position the pseudo-element relative to the parent link */
-            left: 0;
-            /* Align the pseudo-element to the left */
-            bottom: -3px;
-            /* Position the pseudo-element just below the text */
-            width: 100%;
-            /* Make the pseudo-element span the entire width of the link */
-            height: 2px;
-            /* Set the height of the pseudo-element to create the underline */
-            background-color: transparent;
-            /* Set initial background color */
-            transition: background-color 0.3s;
-            /* Add transition effect for smoother color change */
-        }
-
-        .u-nav-link:hover::after {
-            background-color: purple;
-            /* Change background color to purple on hover */
-        }
-    </style>
-
-    <!-- Your other HTML content goes here -->
-
 </body>
+<style>
+    .u-nav-link {
+        text-decoration: none;
+        position: relative;
+        color: #000;
+    }
+
+    .u-nav-link:hover {
+        color: purple;
+    }
+
+    .u-nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        transition: background-color 0.3s;
+    }
+
+    .u-nav-link:hover::after {
+        background-color: purple;
+    }
+
+    /* Remove blue outline on active item */
+    .u-nav-item a:focus {
+        outline: none !important;
+    }
+</style>
+
+
+
 
 </html>

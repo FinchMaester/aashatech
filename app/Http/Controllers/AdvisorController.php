@@ -146,12 +146,15 @@ class AdvisorController extends Controller
      * @param  \App\Models\Advisor  $advisor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Advisor $advisor)
-    {
-        $advisor = Advisor::find($id);
+    public function destroy($id)
+{
+    $advisor = Advisor::find($id);
 
+    if ($advisor) {
         $advisor->delete();
-
-        return redirect('admin/advisor/index')->with(['successMessage' => 'Success !!Advisor Deleted']);
+        return redirect('admin/advisor/index')->with(['successMessage' => 'Success !! Advisor Deleted']);
+    } else {
+        return redirect()->back()->with(['errorMessage' => 'Error: Advisor not found']);
     }
+}
 }

@@ -47,7 +47,7 @@ class WelcomeController extends Controller
             'title' => 'required|string',
             'subtitle' => 'required|string',
             'description' => 'required|string',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2536',
             'content' => 'required|string',
             
         ]);

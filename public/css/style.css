@@ -24,7 +24,16 @@ body{
   background: #f6f2f6 !important;
 }
 
-
+.u-left-side-logo .u-logo-image{
+  height: 40px;
+  width: 120px;
+  margin-left: -90px;
+  margin-top: 20px; 
+}
+.u-left-side-logo .u-logo-image img{
+  height: 200%;
+  width: 100%;
+}
 .header_page{
   width: 100%;
   display: grid;
@@ -36,7 +45,7 @@ body{
 .header_page_title{
   position: relative;
   padding: 0;
-  margin: 0;
+  margin: 0;  
   font-family: "Raleway", sans-serif;
   font-weight: 300;
   font-size: 40px;

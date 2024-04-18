@@ -34,7 +34,7 @@ class ServiceController extends Controller
             'title' => 'required|string',
             'description' => 'required|string',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
-            'icon' => 'required|image|mimes:png,gif,svg|max:300',
+            'icon' => 'required|image|mimes:png,gif,svg|max:1536',
             'content' => 'required|string',
         ]);
 

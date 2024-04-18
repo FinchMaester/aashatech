@@ -8,11 +8,14 @@
 <body>
     <header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-sticky u-sticky-5894" id="sec-92d8">
         <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-            <a href="{{ route('index') }}" class="u-image u-logo u-image-1" data-image-width="1496" data-image-height="728"
-                data-animation-duration="1000" data-animation-direction="">
-                <img src="{{ url('uploads/sitesetting/' . $sitesetting->main_logo) }}"
-                    class="u-logo-image u-logo-image-1">
-            </a>
+            <div class="u-left-side-logo">
+                <a href="{{ route('index') }}" class="u-image u-logo u-image-1" data-image-width="1496"
+                    data-image-height="728" data-animation-duration="1000" data-animation-direction="">
+                    <img src="{{ url('uploads/sitesetting/' . $sitesetting->main_logo) }}"
+                        class="u-logo-image u-logo-image-1"
+                        style=" ">
+                </a>
+            </div>
             <nav class="u-align-left u-menu u-menu-dropdown u-offcanvas u-menu-1">
                 <div class="menu-collapse" style="font-size: 1rem; font-weight: 700;">
                     <a class="u-button-style u-custom-active-color u-custom-color u-custom-hover-color u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-nav-link u-text-custom-color-1"
@@ -24,7 +27,9 @@
                     <ul class="u-nav u-spacing-2 u-unstyled u-nav-1">
                         <li class="u-nav-item {{ Request::routeIs('index') ?: '' }}">
                             <a class="u-active-custom u-button-style u-nav-link" href="{{ route('index') }}"
-                                style="padding: 10px 24px;">Home</a>
+                                style="padding: 10px 24px;">
+                                Home
+                            </a>
                         </li>
                         <li class="u-nav-item {{ Request::routeIs('About') ? 'active' : '' }}">
                             <a class="u-active-custom u-button-style u-nav-link" href="{{ route('About') }}"
@@ -56,8 +61,8 @@
                         </li>
                         <!-- Other list items -->
                         <li class="u-nav-item {{ Request::routeIs('Allprojects') ? 'active' : '' }}">
-                            <a class="u-active-custom u-button-style u-nav-link"
-                                href="{{ route('Allprojects') }}" style="padding: 10px 24px;">Projects</a>
+                            <a class="u-active-custom u-button-style u-nav-link" href="{{ route('Allprojects') }}"
+                                style="padding: 10px 24px;">Projects</a>
                         </li>
                         <!-- Other list items -->
                         <li class="u-nav-item {{ Request::routeIs('Career') ? 'active' : '' }}">
@@ -71,13 +76,13 @@
                         </li>
                         <!-- Other list items -->
                         <li class="u-nav-item {{ Request::routeIs('Testimonial') ? 'active' : '' }}">
-                            <a class="u-active-custom u-button-style u-nav-link"
-                                href="{{ route('Testimonial') }}" style="padding: 10px 24px;">Testimonials</a>
+                            <a class="u-active-custom u-button-style u-nav-link" href="{{ route('Testimonial') }}"
+                                style="padding: 10px 24px;">Testimonials</a>
                         </li>
                         <!-- Other list items -->
                         <li class="u-nav-item {{ Request::routeIs('contactpage') ? 'active' : '' }}">
-                            <a class="u-active-custom u-button-style u-nav-link"
-                                href="{{ url('contactpage') }}" style="padding: 10px 24px;">Contact</a>
+                            <a class="u-active-custom u-button-style u-nav-link" href="{{ url('contactpage') }}"
+                                style="padding: 10px 24px;">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -85,37 +90,12 @@
         </div>
     </header>
 </body>
-<style>
-    .u-nav-link {
-        text-decoration: none;
-        position: relative;
-        color: #000;
-    }
 
-    .u-nav-link:hover {
-        color: purple;
-    }
+       
 
-    .u-nav-link::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -3px;
-        width: 100%;
-        height: 2px;
-        background-color: transparent;
-        transition: background-color 0.3s;
-    }
 
-    .u-nav-link:hover::after {
-        background-color: purple;
-    }
 
-    /* Remove blue outline on active item */
-    .u-nav-item a:focus {
-        outline: none !important;
-    }
-</style>
+
 
 
 

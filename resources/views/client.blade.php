@@ -7,13 +7,14 @@
         <div class="container">
             <div class="row single">
                 @foreach ($clients as $client)
-                    <div class="col-md-4">
-                        <div class="card">
+                    <div class="col-lg-3">
+                        
+                        <div class="card client-card">
                             <!-- Assuming your client model has an 'image' attribute -->
                             <img class="card__icon" src="{{ asset($client->image) }}" alt="client-logo">
-                            <div class="card__body">
+                            <div class="card__body"> 
                                 <h4 class="card__head">{{ $client->title }}</h4>
-                                <p class="card__content">{{ $client->description }}</p>
+                                <!-- <p class="card__content">{{ $client->description }}</p> -->
                                 <!-- Add more client details here as needed -->
                             </div>
                         </div>
@@ -22,7 +23,16 @@
             </div>
         </div>
     </main>
-
+    <style>
+        .client-card{
+            height: 330px;
+        }
+        .card__head{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 
     @include('includes.contact')
 @endsection

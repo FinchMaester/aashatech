@@ -44,7 +44,7 @@
                 <div>
                     <label for="description">Description</label><span style="color:red; font-size:large">
                         *</span>
-                    <textarea style="max-width: 30%;" type="text" class="form-control" name="description" id="description"
+                    <textarea style="max-width: 100%;" type="text" class="form-control" name="description" id="description"
                         placeholder="Add Description" value="">{{ $service->description }}
                       </textarea>
                 </div>
@@ -72,10 +72,9 @@
 
 
 
-
                 <div class="form-group">
                     <label for="summernote">Content</label><span style="color:red; font-size:large"> *</span>
-                    <textarea id="summernote" name="content" value="">
+                    <textarea id="summernote" name="content" style="width: 100%;">
                       {{ $service->content }}
                     </textarea>
                 </div>

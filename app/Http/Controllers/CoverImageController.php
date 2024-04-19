@@ -98,7 +98,8 @@ class CoverImageController extends Controller
         // Optionally, delete the corresponding image file here
         // Storage::delete('uploads/cover_image/' . $coverimage->image);
         $coverimage->delete();
-
-        return redirect('admin/coverimage/index')->with(['successMessage' => 'Success !! Cover Image Deleted']);
+    
+        return response()->json(['success' => true, 'message' => 'Cover image deleted successfully']);
     }
+    
 }

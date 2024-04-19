@@ -34,10 +34,10 @@ class TestimonialController extends Controller
             // Validate the request
             $request->validate([
                 'title' => 'required|string',
-                'image' => 'required|image|max:2048', // Assuming max file size is 2MB
+                'image' => 'required|image|max:2048', 
             ]);
 
-            // Store the image using the storeImage method from ImageController
+        
             $path = $this->imageController->storeImage($request, 'testimonials');
 
             $testimonial = new Testimonial;
@@ -72,7 +72,7 @@ class TestimonialController extends Controller
         // Validate the request
         $request->validate([
             'title' => 'required|string',
-            'image' => 'nullable|image|max:2048', // Assuming max file size is 2MB
+            'image' => 'nullable|image|max:2048', 
         ]);
 
         // Check if a new image is uploaded
@@ -96,7 +96,7 @@ class TestimonialController extends Controller
         if ($request->has('content')) {
             $testimonial->content = $request->content;
         } else {
-            $testimonial->content = null; // Reset content if not provided
+            $testimonial->content = null;
         }
 
         if ($testimonial->save()) {

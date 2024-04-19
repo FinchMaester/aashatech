@@ -60,7 +60,7 @@ enctype="multipart/form-data">
     <div class="form-group">
         <label for="registration_date">Description</label><span style="color:red; font-size:large">
             *</span>
-        <textarea style="max-width: 30%;" type="text" class="form-control" name="description" id="description"
+        <textarea style="max-width: 100%;" type="text" class="form-control" name="description" id="description"
             placeholder="Add Description">{{ $message->description ?? '' }}</textarea>
 
         

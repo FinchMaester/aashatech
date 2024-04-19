@@ -30,7 +30,9 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <form id="quickForm" method="POST" action="{{ route('Testimonials.update', ['testimonial' => $testimonial->id]) }}" enctype="multipart/form-data">
+            <form id="quickForm" method="POST"
+                action="{{ route('Testimonials.update', ['testimonial' => $testimonial->id]) }}"
+                enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="id" value="{{ $testimonial->id }}">
                 {{-- <input type="hidden" name="id" value="{{ $about->id }}"> --}}
@@ -39,7 +41,7 @@
                     <input style="width:auto;" type="text" name="title" class="form-control" id="title"
                         placeholder="Title" value="{{ $testimonial->title }}">
                 </div>
-              
+
 
                 <div class="form-group">
 
@@ -52,12 +54,12 @@
                 </div>
 
 
-               
+
 
 
                 <div class="form-group">
                     <label for="summernote">Content</label><span style="color:red; font-size:large"> *</span>
-                    <textarea id="summernote" name="content" value="">
+                    <textarea id="summernote" name="content" value="" style = "width : 100%">
                       {{ $testimonial->content }}
                     </textarea>
                 </div>

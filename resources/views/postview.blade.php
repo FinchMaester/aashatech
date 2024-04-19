@@ -23,7 +23,7 @@
                     <div class="card-wel">
                         <h5 class="title_card">Other Categories</h5>
                         @foreach ($categories as $category)
-                            <a class="card-wel-title" href="{{ route('Category.index', $category->id) }}">
+                            <a class="card-wel-title" href="{{ route('Post', $category->slug) }}">
                                 <li>{{ $category->title }}</li>
                             </a>
                         @endforeach

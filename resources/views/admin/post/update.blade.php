@@ -4,11 +4,7 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
 
-
-
-
-
-    <!-- Content Header (Page header) -->
+<!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -70,19 +66,18 @@
                 <div class="form-group" style="margin: auto;">
                     <label>Categories</label>
                     @foreach ($categories as $category)
-                    <div class="form-check checkbox2">
-                        <input class="form-check-input" name="categories[]" value="{{ $category->id }}" type="checkbox" @if ($post->getCategories->contains($category->id))
-                        checked
-                        @endif>
-                        <label class="form-check-label">{{ $category->title ?? '' }}</label>
-                    </div>
+                        <div class="form-check checkbox2">
+                            <input class="form-check-input" name="categories[]" value="{{ $category->id }}" type="checkbox"
+                                @if ($post->getCategories->contains($category->id)) checked @endif>
+                            <label class="form-check-label">{{ $category->title ?? '' }}</label>
+                        </div>
                     @endforeach
                 </div>
 
 
                 <div class="form-group">
                     <label for="summernote">Content</label><span style="color:red; font-size:large"> *</span>
-                    <textarea id="summernote" name="content" value="">
+                    <textarea id="summernote" name="content" style="width: 100%; value="">
                       {{ $post->content }}
                     </textarea>
                 </div>

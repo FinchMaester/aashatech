@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-sticky u-sticky-5894" id="sec-92d8">
+    <header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-sticky u-sticky-5894 bg-white" id="sec-92d8">
         <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
             <div class="u-left-side-logo">
                 <a href="{{ route('index') }}" class="u-image u-logo u-image-1" data-image-width="1496"

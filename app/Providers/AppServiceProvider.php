@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         $favicon = Favicon::first();
-        // dd($favicon);
+
         View::share('favicon', $favicon);
     }
 }

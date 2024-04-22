@@ -4,6 +4,9 @@
             display: none;
         }
     }
+    a{
+        color: #fff
+    }
 </style>
 
 <section class="top_nav">

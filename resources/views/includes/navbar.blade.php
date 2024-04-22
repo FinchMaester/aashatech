@@ -26,15 +26,62 @@
                             <a class="u-active-custom u-button-style u-nav-link" href="{{ route('index') }}"
                                 style="padding: 10px 24px;">Home</a>
                         </li>
-                        <li class="u-nav-item {{ Request::routeIs('About') ? 'active' : '' }}">
+
+                        
+                        {{-- <li class="u-nav-item {{ Request::routeIs('About') ? 'active' : '' }}">
                             <a class="u-active-custom u-button-style u-nav-link" href="{{ route('About') }}"
                                 style="padding: 10px 24px;">Introduction</a>
+                        </li> --}}
+
+
+
+                        <li class="u-nav-item {{ Request::routeIs('About') ? 'active' : '' }}">
+                            <a class="u-active-custom-color-1 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-custom-color-1 u-text-hover-white"
+                                style="padding: 10px 31px 10px 24px;" href="#">Introduction</a>
+                            <div class="u-nav-popup">
+                                <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3">
+    
+                               
+                                        <li class="u-nav-item">
+                                            <a href="{{ route('About') }}"
+                                                class="u-button-style u-nav-link u-white">
+                                                About Us
+                                            </a>
+                                        </li>
+                                        <li class="u-nav-item">
+                                            <a href="{{ route('Service') }}"
+                                                class="u-button-style u-nav-link u-white">
+                                                Services
+                                            </a>
+                                        </li>
+                                        <li class="u-nav-item">
+                                            <a href="{{ route('Service') }}"
+                                                class="u-button-style u-nav-link u-white">
+                                                Clients
+                                            </a>
+                                        </li>
+                                        <li class="u-nav-item">
+                                            <a href="{{ route('Testimonial') }}"
+                                                class="u-button-style u-nav-link u-white">
+                                                Testimonials
+                                            </a>
+                                        </li>
+
+    
+                                </ul>
+                            </div>
                         </li>
+    
+
+
+
+
+
                         <!-- Other list items -->
-                        <li class="u-nav-item {{ Request::routeIs('Service') ? 'active' : '' }}">
+                        {{-- <li class="u-nav-item {{ Request::routeIs('Service') ? 'active' : '' }}">
                             <a id="services-link" class="u-active-custom u-button-style u-nav-link"
                                 href="{{ route('Service') }}" style="padding: 10px 24px;">Services</a>
-                        </li>
+                        </li> --}}
                         <!-- Other list items -->
                         <li class="u-nav-item u-has-submenu {{ Request::routeIs('Gallery', 'Video') ? 'active' : '' }}">
                             <a id="gallery-dropdown" class="u-button-style u-nav-link" href="#"
@@ -70,10 +117,10 @@
                                 style="padding: 10px 24px;">Blogs</a>
                         </li>
                         <!-- Other list items -->
-                        <li class="u-nav-item {{ Request::routeIs('Testimonial') ? 'active' : '' }}">
+                        {{-- <li class="u-nav-item {{ Request::routeIs('Testimonial') ? 'active' : '' }}">
                             <a class="u-active-custom u-button-style u-nav-link"
                                 href="{{ route('Testimonial') }}" style="padding: 10px 24px;">Testimonials</a>
-                        </li>
+                        </li> --}}
                         <!-- Other list items -->
                         <li class="u-nav-item {{ Request::routeIs('contactpage') ? 'active' : '' }}">
                             <a class="u-active-custom u-button-style u-nav-link"
@@ -108,12 +155,12 @@
     }
 
     .u-nav-link:hover::after {
-        background-color: purple;
+        background-color: rgb(255, 77, 0);
     }
 
     /* Remove blue outline on active item */
     .u-nav-item a:focus {
-        outline: none !important;
+        /* outline: none !important; */
     }
 </style>
 

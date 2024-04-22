@@ -137,8 +137,8 @@
 
 
 
-{{-- 
-                @include('includes/homeback') --}}
+
+                @include('includes/homeback')
             {{-- </div>
         </section>
         <!-- Form for uploading images -->

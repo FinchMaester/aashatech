@@ -1,92 +1,107 @@
 @extends('admin.layouts.master')
- 
- 
-@section('content') 
- <!-- Content Wrapper. Contains page content -->
 
 
- 
+@section('content')
+    <!-- Content Wrapper. Contains page content -->
 
-    
 
-        <div class="row mb-2">
-          <div class="col-sm-6">
+
+
+
+
+    <div class="row mb-2">
+        <div class="col-sm-6">
             {{-- <h1 class="m-0">{{ $page_title }}</h1> --}}
-           <a href="{{ url('admin') }}"><button class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i> Back</button></a> 
-          </div><!-- /.col -->
-          <div class="col-sm-6">
+            <a href="{{ url('admin') }}"><button class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i>
+                    Back</button></a>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-   
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+
     <!-- /.content-header -->
 
 
     @if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-      
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
 
-<form id="quickForm"  method="POST" action="{{ route('Welcome.store') }}"
-enctype="multipart/form-data">
-@csrf
-<div class="card-body">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Title</label>
-        <input type="text" name="title" class="form-control" placeholder="Title" required>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Subtitle</label>
-        <input type="text" name="subtitle" class="form-control" placeholder="SUbtitle">
-    </div>
-   
-    <div class="form-group">
-        <label for="exampleInputEmail1">Image</label>
-        <input type="file" name="image" class="form-control" onchange="previewImage(event)" placeholder="Image"
-            required>
-    </div>
-    <img id="preview" style="max-width: 500px; max-height:500px" />
 
-    <div class="form-group">
+    <form id="quickForm" method="POST" action="{{ route('Welcome.store') }}" enctype="multipart/form-data">
+        @csrf
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="text" name="title" class="form-control" placeholder="Title" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Subtitle</label>
+                <input type="text" name="subtitle" class="form-control" placeholder="SUbtitle">
+            </div>
 
-        <label for="registration_date">Description</label><span style="color:red; font-size:large">
-            *</span>
-        <textarea style="max-width: 30%;" type="text" class="form-control" name="description" id="description"
-            placeholder="Add Description" value="{{ old('description') }}"></textarea>
-        <label for="description">Description</label><span style="color:red; font-size:large"> *</span>
-        
-    </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Image</label>
+                <input type="file" name="image" class="form-control" onchange="previewImage(event)" placeholder="Image"
+                    required>
+            </div>
+            <img id="preview" style="max-width: 500px; max-height:500px" />
 
-    <div class="form-group">
-        <label for="summernote">Content</label><span style="color:red; font-size:large"> *</span>
-        <textarea id="summernote" name="content">
-            {{ old('content') }}
-        </textarea>
-    </div>
+            <div class="form-group">
 
-</div>
-<!-- /.card-body -->
-<div class="card-footer">
-    <button type="submit" class="btn btn-primary">Create</button>
-</div>
-</form>
+                <label for="description">Description</label><span style="color:red; font-size:large"> *</span>
+
+                <textarea style="max-width: 100%;" type="text" class="form-control" name="description" id="description"
+                    placeholder="Add Description" value="{{ old('description') }}"></textarea>
 
 
-     
-        <!-- Main row -->
-   
-   
+            </div>
+
+            <div class="form-group">
+                <label for="summernote">Content</label><span style="color:red; font-size:large"> *</span>
+                <div class="textarea-wrapper">
+                    <textarea id="summernote" name="content">{{ old('content') }}</textarea>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+    <style>
+        .textarea-wrapper {
+            display: flex;
+            width: 100%;
+            /* Set the width to 500% of the content's width */
+        }
+
+        #summernote {
+            flex-grow: 1;
+            /* Allow the textarea to grow and fill the available space */
+            max-width: 100%;
+            /* Ensure the textarea doesn't exceed the available space */
+        }
+    </style>
+
+
+
+    <!-- Main row -->
+
+
 
 
     <script>
@@ -105,4 +120,4 @@ enctype="multipart/form-data">
 
 
 
-  @stop
+@stop

@@ -1,6 +1,6 @@
 <section class="u-align-center u-clearfix u-grey-5 u-section-11" id="sec-be4d">
     <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h1 class="u-text u-text-custom-color-1 u-text-default u-text-1">{{ __('Contact') }}</h1>
+        <h1 class="u-text u-text-custom-color-1 u-text-default u-text-1 mb-5">{{ __('Contact') }}</h1>
 
         <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
             <!-- Display success message if set -->

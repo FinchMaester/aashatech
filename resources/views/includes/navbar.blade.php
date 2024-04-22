@@ -25,12 +25,12 @@
                 </div>
                 <div class="u-custom-menu u-nav-container">
                     <ul class="u-nav u-spacing-2 u-unstyled u-nav-1">
-                        <li class="u-nav-item {{ Request::routeIs('index') ?: '' }}">
+                        <!-- <li class="u-nav-item {{ Request::routeIs('index') ?: '' }}">
                             <a class="u-active-custom u-button-style u-nav-link" href="{{ route('index') }}"
                                 style="padding: 10px 24px;">
                                 Home
                             </a>
-                        </li>
+                        </li> -->
                         <li class="u-nav-item {{ Request::routeIs('About') ? 'active' : '' }}">
                             <a class="u-active-custom u-button-style u-nav-link" href="{{ route('About') }}"
                                 style="padding: 10px 24px;">Introduction</a>
@@ -90,14 +90,4 @@
         </div>
     </header>
 </body>
-
-       
-
-
-
-
-
-
-
-
 </html>

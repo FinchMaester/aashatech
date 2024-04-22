@@ -180,10 +180,10 @@ body{
   font-size: 22px; 
 
 }
-
-
-
-
+.post_page img{
+  height: 30%;
+  width: 100%;
+}
 .top_nav_second{
   text-align: right;
 }

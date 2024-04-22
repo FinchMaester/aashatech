@@ -7,7 +7,9 @@
                 <div class="col-md-9 col-lg-9">
                     @isset($post)
                         <h1 class="header_page_title">{{ $post->title }}</h1>
-                        <img src="{{ asset($post->image) }}" style="width: 150px; height: 150px;" alt="Post Image">
+                        <div class="post-page-img">
+                            <img src="{{ asset($post->image) }}"  alt="Post Image">
+                        </div>
                         <span class="postpage_p">{!! $post->content !!}</span>
                     @endisset
                 </div>

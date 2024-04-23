@@ -27,8 +27,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        $favicon = Favicon::first();
+        // $favicon = Favicon::first();
         // dd($favicon);
-        View::share('favicon', $favicon);
+        // View::share('favicon', $favicon);
     }
 }

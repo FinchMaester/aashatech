@@ -10,7 +10,7 @@
                 @foreach ($projects as $project)
                     <div class="u-align-right u-container-style u-image u-list-item u-repeater-item u-shading u-video-cover u-image-1"
                         data-image-width="1280" data-image-height="853"
-                        style="background-image: url({{ asset($project->image) }});">
+                        style="background-image: url({{ asset($project->image) }})">
 
 
                         <div class="u-container-layout u-similar-container u-container-layout-1">

@@ -66,7 +66,7 @@
 
                 <div class="form-group">
                     <label for="summernote">Content</label><span style="color:red; font-size:large"> *</span>
-                    <textarea id="summernote" name="content" value="">
+                    <textarea id="summernote" name="content" value="" style = "width : 100%">
                       {{ $project->content }}
                     </textarea>
                 </div>

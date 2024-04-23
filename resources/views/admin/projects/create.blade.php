@@ -48,7 +48,7 @@
                 <input style="width:auto;" type="text" name="title" class="form-control" id="title"
                     value="{{ old('title') }}" placeholder="Title">
             </div>
-           
+
 
 
 
@@ -66,16 +66,16 @@
             </div>
             <img id="preview" style="max-width: 500px; max-height:500px" />
 
-        
+
 
             <div class="form-group">
                 <label for="summernote">Content</label><span style="color:red; font-size:large"> *</span>
-                <textarea id="summernote" name="content">
+                <textarea id="summernote" name="content" style ="width: 100%;">
                     {{ old('content') }}
                 </textarea>
             </div>
 
-            
+
 
 
         </div>

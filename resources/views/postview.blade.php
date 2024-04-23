@@ -3,7 +3,7 @@
 @section('content')
     <section class="post_page">
         <div class="container">
-            <div class="row mt-2 mb-3 ">
+            <div class="row mt-2 mb-3">
                 <div class="col-md-9 col-lg-9">
                     @isset($post)
                         <h1 class="header_page_title">{{ $post->title }}</h1>
@@ -25,7 +25,7 @@
                     <div class="card-wel">
                         <h5 class="title_card">Other Categories</h5>
                         @foreach ($categories as $category)
-                            <a class="card-wel-title" href="{{ route('Category.index', $category->id) }}">
+                            <a class="card-wel-title" href="{{ route('Post', $category->slug) }}">
                                 <li>{{ $category->title }}</li>
                             </a>
                         @endforeach

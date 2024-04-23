@@ -8,7 +8,6 @@
 
 <section class="top_nav">
     <div class="container">
-
         <div class="row">
             <div class="col-md-3 col-6 top_nav_first">
                 <p class="top_nav_first_p">

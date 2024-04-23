@@ -763,15 +763,11 @@ object-fit: cover;
 
 }
 
-
-
 @media (max-width: 575px) {
   .carousel {
     height: 266px;
   }
 } 
-
-
 /* For Single Page */
 .single .col-md-4{
  
@@ -1259,7 +1255,7 @@ object-fit: cover;
 
 .u-section-2 .u-group-1 {
   width: 482px;
-  min-height: 478px;
+  /* min-height: 478px; */
   margin: -308px auto 0 67px;
 }
 
@@ -1270,6 +1266,7 @@ object-fit: cover;
 .u-section-2 .u-text-1 {
   font-weight: 700;
   margin: 23px auto 0 0;
+ 
 }
 
 .u-section-2 .u-text-2 {
@@ -1432,7 +1429,7 @@ object-fit: cover;
 } 
 .u-section-3 {
   background-image: none;
-  min-height: 1730px;
+  /* min-height: 1730px; */
 }
 
 .u-section-3 .u-list-1 {
@@ -1903,7 +1900,9 @@ object-fit: cover;
   font-size: 1.25rem;
   margin: -40px 16px 0 64px;
 }
-
+.u-video-cover{
+  height: 400px;
+}
 .u-section-3 .u-text-16 {
   font-style: italic;
   margin: 31px 0 0;

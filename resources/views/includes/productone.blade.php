@@ -23,6 +23,10 @@
                 </div>
             </div>
         </section>
-
+<!-- <style>
+    .u-clearfix{
+        
+    }
+    </style> -->
             
 @endforeach

@@ -81,6 +81,7 @@ Route::post('admin/coverimage/update', [App\Http\Controllers\CoverImageControlle
 Route::get('admin/coverimage/delete/{id}', [App\Http\Controllers\CoverImageController::class, 'destroy'])->name('Coverimage.destroy');
 
 
+
 // For Back Image
 
 Route::get('admin/backimage', [App\Http\Controllers\BackImageController::class, 'index'])->name('Backimage.index');

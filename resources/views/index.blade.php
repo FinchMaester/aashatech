@@ -7,10 +7,6 @@
 
 
     <body class="u-body u-xl-mode" data-lang="en">
-
-
-
-
         <section class="u-align-left u-clearfix u-section-1" id="carousel_560d">
             <div class="u-clearfix u-sheet u-sheet-1">
                 <div class="u-shape u-shape-svg u-text-custom-color-2 u-shape-1" data-animation-name="fadeIn"

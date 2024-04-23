@@ -103,8 +103,8 @@
                     </div> --}}
         </div>
     </div>
-    <img class="u-expanded-width u-image u-image-1" src="images/computer.jpg" data-image-width="1280"
-        data-image-height="853">
+    <!-- <img class="u-expanded-width u-image u-image-1" src="images/computer.jpg" data-image-width="1280"
+        data-image-height="853"> -->
 
     <div class="u-container-style u-group u-radius-30 u-shape-round u-white u-group-1">
         <div class="u-container-layout u-container-layout-5"></div>
@@ -149,9 +149,6 @@
                     </div>
                 </div>
             @endforeach
-
-
-
         </div>
     </div>
 </section>

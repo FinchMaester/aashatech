@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!-- Favicon -->
-  
+
 
     <!-- Google reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -39,6 +39,7 @@
         gtag('js', new Date());
         gtag('config', 'G-RDTXSELLCL');
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Custom JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

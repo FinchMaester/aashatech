@@ -5,11 +5,11 @@
                 <div class="swiper-wrapper">
                     @foreach ($backimages as $backimage)
                         @if (!empty($backimage->img) && is_array($backimage->img))
-                            <div class="swiper-slide">
+                            <div class="swiper-slide u-effect-fade u-gallery-item u-gallery-item-1">
                                 <div class="swiper-image">
                                     <img class="img-fluid" src="{{ asset($backimage->img[0]) }}" alt="{{ $backimage->title }}">
                                 </div>
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="u-over-slide u-shading u-over-slide-1">
                                     <h5>{{ $backimage->title }}</h5>
                                     <p>{{ $backimage->img_desc }}</p>
                                 </div>

@@ -1,32 +1,47 @@
 <?php
 
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Redirect;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\SingleController;
-use App\Http\Controllers\CareersController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\FaviconController;
-use App\Http\Controllers\MessageController;
-use App\Http\Controllers\FrontViewController;
-use App\Http\Controllers\LegaldocsController;
-use App\Http\Controllers\Admin\PostController;
-use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BackImageController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CoverImageController;
+use App\Http\Controllers\Admin\PhotoGalleryController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ServiceController;
-use App\Http\Controllers\Admin\WelcomeController;
-use App\Http\Controllers\InstagramPostController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\JobApplicationController;
-use App\Http\Controllers\Admin\BackImageController;
-use App\Http\Controllers\Admin\CoverImageController;
 use App\Http\Controllers\Admin\SitesettingController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TestimonialController;
-use App\Http\Controllers\Admin\PhotoGalleryController;
+use App\Http\Controllers\Admin\WelcomeController;
+use App\Http\Controllers\AdvisorController;
+use App\Http\Controllers\CareersController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\FaviconController;
+use App\Http\Controllers\FrontViewController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\InstagramPostController;
+use App\Http\Controllers\JobApplicationController;
+use App\Http\Controllers\LegaldocsController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\MvcController;
+use App\Http\Controllers\SingleController;
+use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\VideoController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Route;
+
+
+
+
+
+
+
 
 
 /*
@@ -395,6 +410,25 @@ Route::post('admin/favicon/store', [FaviconController::class, 'store'])->name('F
 Route::post('/compress-image', [ImageController::class, 'compressAndConvertToWebP']);
 Route::post('/upload-image', 'ImageController@uploadImage')->name('image.upload');
 
+
+
+Route::post('/verify_token', function (Request $request) {
+    // Add your logic to verify the reCAPTCHA token here
+    // For example, you can use the "g-recaptcha-response" field from the request
+    
+    // Example code to verify the reCAPTCHA token
+    $response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
+        'secret' => config('services.recaptcha.secret_key'),
+        'response' => $request->input('token'), // assuming the token is sent as 'token'
+        'remoteip' => $request->ip()
+    ]);
+
+    if ($response->json('success')) {
+        return response()->json(['success' => true]);
+    } else {
+        return response()->json(['success' => false]);
+    }
+})->name('verify_token'); 
 
 // Route::get('blogs', function () {
 //     // Redirect to the Category route with a default parameter value

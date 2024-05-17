@@ -23,14 +23,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('uploads/favicon/' . $favicon->favicon_ico) }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('uploads/favicon/' . $favicon->apple_touch_icon) }}">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ asset('uploads/favicon/' . $favicon->favicon_thirtyTwo) }}">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ asset('uploads/favicon/' . $favicon->favicon_sixteen) }}">
-    <link rel="manifest" href="{{ asset('uploads/favicon/file' . $favicon->file) }}">
-    <link rel="manifest" href="{{ asset('uploads/favicon/file' . $favicon->favicon_ico) }}">
+
 
     <!-- Google reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -46,6 +39,7 @@
         gtag('js', new Date());
         gtag('config', 'G-RDTXSELLCL');
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Custom JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

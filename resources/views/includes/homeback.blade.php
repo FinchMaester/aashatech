@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <div class="col-md-12">
             <div class="swiper-container">
@@ -6,7 +6,9 @@
                     @foreach ($backimages as $backimage)
                         @if (!empty($backimage->img) && is_array($backimage->img))
                             <div class="swiper-slide">
-                                <img class="img-fluid" src="{{ asset($backimage->img[0]) }}" alt="{{ $backimage->title }}">
+                                <div class="swiper-image">
+                                    <img class="img-fluid" src="{{ asset($backimage->img[0]) }}" alt="{{ $backimage->title }}">
+                                </div>
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{{ $backimage->title }}</h5>
                                     <p>{{ $backimage->img_desc }}</p>
@@ -84,6 +86,16 @@
         overflow: hidden;
         /* Hide overflow to ensure only visible slides are shown */
     }
+    .swiper-container .carousel-caption{
+       height:150px ;
+       margin: 0px;
+       padding: 0px;
+       overflow: hidden;
+    }
+    .swiper-image .img-fluid{
+            height:200px;
+            width: 100%;
+        }
 </style>
 <style>
     /* Customize the next and previous arrow buttons */

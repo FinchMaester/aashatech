@@ -87,6 +87,12 @@
         overflow-y: auto;
         /* Add vertical scroll if content exceeds the height */
     }
+    .testimonial-content-container p{
+        overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    }
 </style>
 
 <script>
